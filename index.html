@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth bg-black">
+<html lang="en" class="scroll-smooth bg-[#030303]">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harshit Choudhary | The Architect</title>
-    <meta name="description" content="Harshit Choudhary - Systems Architect & Explorer.">
+    <meta name="description" content="Founding Engineer & Systems Architect building the future of global trade.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,26 +19,20 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Space Grotesk', 'monospace'],
                     },
                     colors: {
-                        black: '#000000',
-                        obsidian: '#030303',
-                        gold: '#D4AF37', // Royal Gold
-                        platinum: '#E5E4E2',
+                        black: '#030303', // Deepest matte black
+                        surface: '#0C0C0C', // Slightly lighter surface
+                        'surface-hover': '#141414',
+                        accent: '#3B82F6', // Subtle tech blue accent
+                        subtle: '#9CA3AF', // Gray text
                     },
                     backgroundImage: {
-                        'metal-gradient': 'linear-gradient(145deg, #1a1a1a, #000000)',
-                        'gold-shine': 'linear-gradient(45deg, transparent 45%, rgba(212, 175, 55, 0.3) 50%, transparent 55%)',
+                        'tech-pattern': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%)',
+                        'gradient-surface': 'linear-gradient(145deg, #0C0C0C, #080808)',
                     },
-                    animation: {
-                        'float': 'float 10s infinite linear',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%': { transform: 'translateY(100vh) scale(0)' },
-                            '100%': { transform: 'translateY(-10vh) scale(1)' }
-                        }
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(59, 130, 246, 0.15)',
                     }
                 }
             }
@@ -46,343 +40,249 @@
     </script>
 
     <style>
-        /* CORE LUXURY STYLES */
+        /* DESCRIPTIVE TECH BLACK THEME */
         body {
-            background-color: #000000;
-            color: #d4d4d8;
+            background-color: #030303;
+            color: #ffffff;
             overflow-x: hidden;
-            perspective: 1000px;
         }
 
-        /* Anti-Gravity Particles Container */
-        #particles {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .particle {
-            position: absolute;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: -10px;
+        /* Subtle Noise Overlay for Matte Finish */
+        .noise {
+            position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* 3D Tilt Cards */
-        .tilt-box {
-            transform-style: preserve-3d;
-            transition: transform 0.1s ease-out; /* Smooth, no lag */
-            will-change: transform;
+        /* The Premium Tech Card Style (Not glass, but solid dark surface) */
+        .tech-card {
+            background-color: #0C0C0C;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .tech-card:hover {
+            background-color: #141414;
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
         }
         
-        .tilt-content {
-            transform: translateZ(20px);
-        }
-
-        /* Obsidian Glass Panels */
-        .bento-card {
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        /* Visual Placeholders (Simulating high-end 3D renders) */
+        .visual-placeholder {
+            background: linear-gradient(45deg, #080808, #111111);
             position: relative;
             overflow: hidden;
         }
-
-        .bento-card:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 40px -10px rgba(0,0,0,1), inset 0 0 0 1px rgba(255,255,255,0.05);
-            z-index: 10;
-        }
-
-        /* Royal Gold Accent on Hover */
-        .hover-gold:hover i, .hover-gold:hover span {
-            color: #D4AF37;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            transition: color 0.3s ease;
-        }
-
-        /* Typography */
-        .text-gradient {
-            background: linear-gradient(to bottom, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .visual-placeholder::after {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 30px 30px; opacity: 0.5;
         }
 
         /* Scroll Reveal */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
     </style>
 </head>
-<body class="antialiased selection:bg-gold/30 selection:text-white">
+<body class="antialiased">
 
-    <div id="particles"></div>
-    <div class="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] z-[1] pointer-events-none"></div>
+    <div class="noise"></div>
 
-    <nav class="fixed w-full z-50 top-0 py-6 px-6 mix-blend-difference">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <span class="font-mono font-bold text-lg tracking-[0.2em] text-white">
-                HARSHIT<span class="text-gold">.</span>
+    <nav class="fixed w-full z-40 top-0 py-6 px-8 bg-black/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
+            <span class="font-bold text-xl tracking-tight">
+                HARSHIT<span class="text-accent">.</span>
             </span>
-            <div class="flex items-center gap-6">
-                 <a href="#dossier" class="hidden sm:block text-[10px] font-mono tracking-[0.2em] text-slate-400 hover:text-white uppercase transition-colors">
-                    // Dossier
-                </a>
-                <a href="mailto:harshitsinghnitj@gmail.com" class="text-[10px] font-bold font-mono text-black bg-white px-5 py-2 rounded-sm hover:bg-platinum transition-colors tracking-widest uppercase">
+            <div class="flex items-center gap-8">
+                 <a href="#work" class="hidden sm:block text-sm font-medium text-subtle hover:text-white transition-colors">Work</a>
+                 <a href="#beyond" class="hidden sm:block text-sm font-medium text-subtle hover:text-white transition-colors">About</a>
+                <a href="mailto:harshitsinghnitj@gmail.com" class="text-sm font-bold bg-white text-black px-6 py-3 rounded hover:bg-subtle transition-colors">
                     Connect
                 </a>
             </div>
         </div>
     </nav>
 
-    <header class="min-h-screen flex flex-col justify-center items-center px-6 relative z-10">
-        <div class="max-w-6xl w-full text-center">
+    <header class="min-h-[90vh] flex flex-col justify-center pt-32 pb-20 px-6 relative overflow-hidden">
+        <div class="max-w-[1200px] mx-auto w-full z-10">
             
-            <div class="reveal flex justify-center mb-8">
-                <div class="px-4 py-1 border border-white/10 rounded-full bg-white/5 backdrop-blur-md">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-gold/80">
-                        <i class="fa-solid fa-circle text-[6px] align-middle mr-2 animate-pulse"></i>System Online
-                    </span>
-                </div>
+            <div class="reveal mb-6">
+                <span class="text-accent font-semibold tracking-wider uppercase text-sm">Founding Engineer & Architect</span>
             </div>
 
-            <h1 class="reveal delay-1 font-mono text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none mb-6">
-                <span class="text-gradient block">ARCHITECT</span>
-                <span class="text-transparent bg-clip-text bg-gradient-to-b from-slate-600 to-black stroke-white block" style="-webkit-text-stroke: 1px rgba(255,255,255,0.2);">OF SYSTEMS</span>
+            <h1 class="reveal delay-1 text-6xl md:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
+                Architecting the<br>
+                Future of Trade.
             </h1>
 
-            <p class="reveal delay-2 font-sans text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                Founding Engineer. Building <span class="text-white border-b border-white/20">autonomous trade infrastructure</span> 
-                with high-precision logic and zero-latency execution.
+            <p class="reveal delay-2 text-subtle text-xl md:text-2xl max-w-3xl font-normal leading-relaxed mb-12">
+                I build heavy-lifting autonomous systems. Replacing fragmented manual operations with high-precision, multi-agent AI infrastructure.
             </p>
 
-            <div class="reveal delay-3 flex flex-col sm:flex-row justify-center gap-5">
-                <a href="#work" class="px-8 py-4 bg-white text-black font-bold text-xs tracking-[0.2em] rounded-sm hover:scale-105 transition-transform uppercase">
-                    View Work
+            <div class="reveal delay-2 flex flex-wrap gap-6">
+                <a href="#work" class="px-8 py-4 bg-accent text-white font-bold text-sm rounded hover:bg-blue-600 transition-all">
+                    View Case Study
                 </a>
-                <a href="#dossier" class="px-8 py-4 border border-white/20 text-white font-bold text-xs tracking-[0.2em] rounded-sm hover:bg-white/5 transition-colors uppercase">
-                    Human Profile
+                <a href="#stack" class="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded hover:bg-white/5 transition-all">
+                    Technical Core
                 </a>
             </div>
         </div>
+
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] h-[70%] bg-tech-pattern opacity-50 pointer-events-none -z-10 blur-3xl"></div>
     </header>
 
-    <section class="py-24 z-10 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center gap-4 mb-12 reveal">
-                <div class="h-px bg-white/20 flex-grow"></div>
-                <h2 class="font-mono text-sm text-slate-500 tracking-[0.3em] uppercase">Tech Arsenal</h2>
-                <div class="h-px bg-white/20 flex-grow"></div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
-                <div class="bento-card tilt-box p-8 aspect-square flex flex-col justify-center items-center text-center gap-4 group hover-gold reveal">
-                    <i class="fa-solid fa-brain text-3xl text-slate-600 transition-colors"></i>
-                    <span class="font-mono text-xs text-slate-300 uppercase tracking-widest">AI Agents</span>
-                </div>
-                <div class="bento-card tilt-box p-8 aspect-square flex flex-col justify-center items-center text-center gap-4 group hover-gold reveal delay-1">
-                    <i class="fa-brands fa-python text-3xl text-slate-600 transition-colors"></i>
-                    <span class="font-mono text-xs text-slate-300 uppercase tracking-widest">Python</span>
-                </div>
-                <div class="bento-card tilt-box p-8 aspect-square flex flex-col justify-center items-center text-center gap-4 group hover-gold reveal delay-2">
-                    <i class="fa-solid fa-network-wired text-3xl text-slate-600 transition-colors"></i>
-                    <span class="font-mono text-xs text-slate-300 uppercase tracking-widest">Systems</span>
-                </div>
-                <div class="bento-card tilt-box p-8 aspect-square flex flex-col justify-center items-center text-center gap-4 group hover-gold reveal delay-3">
-                    <i class="fa-solid fa-globe text-3xl text-slate-600 transition-colors"></i>
-                    <span class="font-mono text-xs text-slate-300 uppercase tracking-widest">Trade Logic</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="py-24 z-10 relative">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="bento-card tilt-box rounded-none border-l-4 border-l-gold p-8 md:p-16 relative reveal">
-                <div class="absolute right-10 top-10 opacity-10">
-                    <i class="fa-solid fa-quote-right text-8xl text-white"></i>
-                </div>
+    <section id="work" class="py-32 bg-surface/30 border-t border-white/5">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
                 
-                <h3 class="font-mono text-sm text-gold tracking-widest mb-2 uppercase">Flagship Deployment</h3>
-                <h2 class="font-mono text-4xl md:text-5xl text-white mb-6 font-bold">HINDTRADE AI</h2>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="tilt-content">
-                        <p class="text-slate-400 leading-relaxed mb-8 font-light">
-                            Architected the core operating system for global trade. 
-                            <span class="text-white">Orchestrated multi-agent autonomous workflows</span> 
-                            that handle compliance, logistics, and finance across 180+ countries. 
-                            Zero-to-One execution.
+                <div class="reveal">
+                    <span class="text-accent font-semibold tracking-wider uppercase text-sm mb-4 block">Flagship Protocol</span>
+                    <h2 class="text-5xl font-bold mb-8">HindTrade AI</h2>
+                    
+                    <div class="space-y-8 text-subtle text-lg leading-relaxed">
+                        <p>
+                            <strong class="text-white">The Challenge:</strong> Global trade is paralyzed by fragmented documentation, manual compliance checks, and opaque logistics.
                         </p>
-                        <a href="https://hindtradeai.vercel.app" target="_blank" class="inline-flex items-center gap-3 text-white border-b border-white/30 pb-1 hover:border-gold hover:text-gold transition-colors text-xs font-mono tracking-widest uppercase">
-                            Initialize Protocol <i class="fa-solid fa-arrow-right"></i>
+                        <p>
+                            <strong class="text-white">The Solution:</strong> I architected a Zero-to-One Operating System. A multi-agent AI environment that unifies exporters, logistics, and compliance authorities into a single, autonomous workflow.
+                        </p>
+                        <p>
+                            The system dynamically adapts to regulation changes across <span class="text-white">180+ countries</span>, automating everything from CA onboarding to real-time port visibility.
+                        </p>
+                    </div>
+
+                    <div class="mt-12 flex flex-wrap gap-4">
+                        <div class="px-4 py-2 bg-black border border-white/10 rounded text-sm text-subtle">Multi-Agent Systems</div>
+                        <div class="px-4 py-2 bg-black border border-white/10 rounded text-sm text-subtle">Dynamic Compliance</div>
+                        <div class="px-4 py-2 bg-black border border-white/10 rounded text-sm text-subtle">Logistics Auto</div>
+                    </div>
+
+                    <div class="mt-12">
+                         <a href="https://hindtradeai.vercel.app" target="_blank" class="inline-flex items-center gap-3 text-white font-bold border-b-2 border-accent pb-2 hover:text-accent transition-colors">
+                            Launch Platform Interface <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
-                    
-                    <div class="tilt-content grid grid-cols-2 gap-4">
-                        <div class="p-4 bg-white/5 border border-white/10">
-                            <h4 class="text-2xl text-white font-mono">180+</h4>
-                            <p class="text-[10px] text-slate-500 uppercase">Countries Mapped</p>
-                        </div>
-                        <div class="p-4 bg-white/5 border border-white/10">
-                            <h4 class="text-2xl text-white font-mono">100%</h4>
-                            <p class="text-[10px] text-slate-500 uppercase">Automation</p>
-                        </div>
+                </div>
+
+                <div class="reveal delay-1 h-[600px] visual-placeholder rounded-2xl border border-white/10 relative group overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center flex-col gap-6 p-10">
+                        <i class="fa-solid fa-network-wired text-6xl text-accent/50 group-hover:text-accent transition-colors"></i>
+                        <h3 class="text-2xl font-bold text-center">System Architecture Visual</h3>
+                        <p class="text-subtle text-center">Simulating real-time data flow across 180+ global nodes.</p>
                     </div>
+                    <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="dossier" class="py-32 z-10 relative bg-[#020202]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 reveal">
-                <h2 class="font-mono text-4xl md:text-6xl text-white font-bold mb-4">
-                    BEYOND THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-600">CODE.</span>
-                </h2>
-                <p class="text-slate-500 font-mono text-xs tracking-widest uppercase">Classified Personality Data</p>
+    <section id="stack" class="py-32 relative">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="mb-16 reveal max-w-2xl">
+                <h2 class="text-4xl font-bold mb-6">Technical Arsenal.</h2>
+                <p class="text-subtle text-lg">The core technologies used to build scalable, intelligent infrastructure.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-auto gap-4 md:h-[600px]">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="reveal tech-card p-8 rounded-xl flex flex-col gap-4">
+                    <i class="fa-solid fa-brain text-3xl text-accent"></i>
+                    <h3 class="font-bold text-xl">AI Agents</h3>
+                    <p class="text-sm text-subtle">Autonomous Logic Arch</p>
+                </div>
+                <div class="reveal delay-1 tech-card p-8 rounded-xl flex flex-col gap-4">
+                    <i class="fa-brands fa-python text-3xl text-white"></i>
+                    <h3 class="font-bold text-xl">Python</h3>
+                    <p class="text-sm text-subtle">Backend Core</p>
+                </div>
+                <div class="reveal tech-card p-8 rounded-xl flex flex-col gap-4">
+                    <i class="fa-solid fa-server text-3xl text-white"></i>
+                    <h3 class="font-bold text-xl">System Design</h3>
+                    <p class="text-sm text-subtle">High Scalability</p>
+                </div>
+                <div class="reveal delay-1 tech-card p-8 rounded-xl flex flex-col gap-4">
+                    <i class="fa-solid fa-globe text-3xl text-white"></i>
+                    <h3 class="font-bold text-xl">Global Trade</h3>
+                    <p class="text-sm text-subtle">Domain Expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beyond" class="py-32 bg-surface/30 border-t border-white/5">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="mb-20 reveal max-w-2xl">
+                 <h2 class="text-4xl font-bold mb-6">Beyond the Terminal.</h2>
+                <p class="text-subtle text-lg">The human elements that shape my approach to engineering and problem-solving.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px]">
                 
-                <div class="bento-card tilt-box col-span-1 md:col-span-2 row-span-2 p-8 flex flex-col justify-between group reveal">
-                    <div class="tilt-content">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 text-gold">
-                                <i class="fa-solid fa-building-columns"></i>
-                            </div>
-                            <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400">Foundation</span>
+                <div class="reveal tech-card md:col-span-2 p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i class="fa-solid fa-building-columns text-3xl text-accent"></i>
+                            <span class="text-sm font-semibold uppercase tracking-wider text-subtle">The Foundation</span>
                         </div>
-                        <h3 class="text-2xl text-white font-mono mb-2">Sri Dasmesh Academy</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            My roots are grounded in discipline. The rigor of Sri Dasmesh Academy shaped my resilience before I entered the world of engineering at <span class="text-white">NIT Jalandhar</span>.
-                        </p>
-                        <p class="text-xs text-slate-500 font-mono uppercase border-l-2 border-gold pl-3">
-                            "Discipline is the bridge between goals and accomplishment."
+                        <h3 class="text-3xl font-bold mb-6">Sri Dasmesh Academy</h3>
+                        <p class="text-subtle text-lg leading-relaxed max-w-xl">
+                            My resilience was forged early in the disciplined environment of an Army background school. This ingrained the rigour I now apply to engineering at <span class="text-white">NIT Jalandhar</span>.
                         </p>
                     </div>
-                    <div class="absolute right-0 bottom-0 w-32 h-32 bg-white/5 rounded-tl-full blur-2xl"></div>
+                    <div class="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent"></div>
                 </div>
 
-                <div class="bento-card tilt-box col-span-1 md:col-span-1 row-span-2 p-8 relative overflow-hidden group reveal delay-1">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    <div class="tilt-content h-full flex flex-col">
-                        <div class="mb-auto">
-                            <h3 class="text-white font-mono text-xl mb-6">Adrenaline<br>Junkie</h3>
-                            <ul class="space-y-6">
-                                <li class="flex items-center gap-4 text-slate-300 group-hover:translate-x-2 transition-transform">
-                                    <i class="fa-solid fa-mountain text-gold text-sm"></i>
-                                    <span class="text-sm">Mountaineer</span>
-                                </li>
-                                <li class="flex items-center gap-4 text-slate-300 group-hover:translate-x-2 transition-transform delay-75">
-                                    <i class="fa-solid fa-horse-head text-gold text-sm"></i>
-                                    <span class="text-sm">Equestrian</span>
-                                </li>
-                                <li class="flex items-center gap-4 text-slate-300 group-hover:translate-x-2 transition-transform delay-100">
-                                    <i class="fa-solid fa-truck-monster text-gold text-sm"></i>
-                                    <span class="text-sm">Offroader</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-8 pt-8 border-t border-white/10">
-                            <p class="text-[10px] text-slate-500 uppercase tracking-widest">Status: Active</p>
+                <div class="reveal delay-1 tech-card p-10 rounded-2xl flex flex-col relative overflow-hidden">
+                    <h3 class="text-2xl font-bold mb-8">Adrenaline &<br>Discipline.</h3>
+                    <ul class="space-y-6 text-lg text-subtle">
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-mountain text-white"></i> Mountaineer</li>
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-horse-head text-white"></i> Equestrian</li>
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-truck-monster text-white"></i> Offroader</li>
+                    </ul>
+                </div>
+
+                <div class="reveal tech-card p-10 rounded-2xl flex flex-col justify-center gap-4 relative overflow-hidden group">
+                    <i class="fa-solid fa-palette text-4xl text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold">Acrylic Artist.</h3>
+                    <p class="text-subtle">Finding order in chaos through painting.</p>
+                     <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                 <a href="https://instagram.com/baba_aps" target="_blank" class="reveal delay-1 tech-card md:col-span-2 p-8 rounded-2xl flex items-center justify-between group hover:border-accent/50 transition-colors">
+                    <div class="flex items-center gap-6">
+                        <i class="fa-brands fa-instagram text-4xl text-white group-hover:text-accent transition-colors"></i>
+                        <div>
+                            <h3 class="text-xl font-bold">@BABA_APS</h3>
+                            <p class="text-sm text-subtle">Follow the journey.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="bento-card tilt-box col-span-1 md:col-span-1 p-8 flex flex-col justify-center gap-2 group reveal delay-2">
-                    <i class="fa-solid fa-palette text-2xl text-slate-400 group-hover:text-pink-500 transition-colors"></i>
-                    <h4 class="text-white font-mono text-lg">Acrylic Artist</h4>
-                    <p class="text-xs text-slate-500">Painting chaos into order.</p>
-                </div>
-
-                <a href="https://instagram.com/baba_aps" target="_blank" class="bento-card tilt-box col-span-1 md:col-span-1 p-8 flex flex-col justify-center items-center gap-3 group relative overflow-hidden reveal delay-3 cursor-pointer">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 to-orange-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="relative z-10 text-center">
-                        <i class="fa-brands fa-instagram text-3xl text-white mb-2"></i>
-                        <h4 class="text-white font-mono text-sm tracking-widest">@BABA_APS</h4>
-                        <p class="text-[10px] text-slate-400 mt-1 uppercase">Follow Protocol</p>
-                    </div>
+                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-white"></i>
                 </a>
-                
+
             </div>
         </div>
     </section>
 
-    <footer class="py-20 border-t border-white/10 bg-black relative z-10 text-center">
-        <p class="font-mono text-[10px] text-slate-600 tracking-[0.3em] uppercase mb-4">End of Transmission</p>
-        <h2 class="font-mono text-2xl text-white font-bold mb-8">HARSHIT CHOUDHARY</h2>
-        <div class="flex justify-center gap-6">
-             <a href="https://linkedin.com/in/harshit-choudhary" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
-             <a href="mailto:harshitsinghnitj@gmail.com" class="text-slate-400 hover:text-white transition-colors"><i class="fa-solid fa-envelope text-xl"></i></a>
-             <a href="https://github.com/harshit-choudhary" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+    <footer class="py-20 border-t border-white/5 bg-black text-center">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10">Ready to build the future?</h2>
+            <div class="flex justify-center gap-10 mb-16">
+                 <a href="https://linkedin.com/in/harshit-choudhary" class="text-subtle hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                 <a href="mailto:harshitsinghnitj@gmail.com" class="text-subtle hover:text-white transition-colors"><i class="fa-solid fa-envelope text-2xl"></i></a>
+                 <a href="https://github.com/harshit-choudhary" class="text-subtle hover:text-white transition-colors"><i class="fa-brands fa-github text-2xl"></i></a>
+            </div>
+            <p class="text-sm text-subtle">© 2025 Harshit Choudhary. Engineered for impact.</p>
         </div>
     </footer>
 
     <script>
-        // 1. Anti-Gravity Particles Generator
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 20;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Random properties
-            const size = Math.random() * 3 + 1; // 1px to 4px
-            const left = Math.random() * 100; // 0% to 100%
-            const duration = Math.random() * 15 + 10; // 10s to 25s
-            const delay = Math.random() * 5; // 0s to 5s
-
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${left}%`;
-            particle.style.animation = `float ${duration}s infinite linear -${delay}s`;
-            
-            particlesContainer.appendChild(particle);
-        }
-
-        // 2. High-Performance 3D Tilt (RequestAnimationFrame)
-        const cards = document.querySelectorAll('.tilt-box');
-        
-        cards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const xPct = x / rect.width;
-                const yPct = y / rect.height;
-
-                const xRotation = (yPct - 0.5) * -10; // Max 10deg
-                const yRotation = (xPct - 0.5) * 10;
-
-                requestAnimationFrame(() => {
-                    card.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(1.02)`;
-                });
-            });
-
-            card.addEventListener('mouseleave', () => {
-                requestAnimationFrame(() => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-                });
-            });
-        });
-
-        // 3. Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
+
