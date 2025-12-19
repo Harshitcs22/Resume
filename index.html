@@ -20,9 +20,9 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        void: "#030303", 
+                        void: "#050505", 
                         glass: "rgba(255, 255, 255, 0.03)",
-                        glassHover: "rgba(255, 255, 255, 0.08)",
+                        glassHover: "rgba(255, 255, 255, 0.07)",
                         emerald: "#10b981", 
                         danger: "#ef4444",
                         gold: "#eab308",
@@ -34,38 +34,32 @@
 
     <style>
         body {
-            background-color: #030303;
-            color: #e5e5e5;
+            background-color: #050505;
+            color: #d4d4d4;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            /* Subtle grain texture for luxury feel */
-            background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 70%);
         }
 
-        /* ULTIMATE LUXURY GLASS CARD */
+        /* Luxury Glass Effect Update */
         .glass-card {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 1px solid rgba(255, 255, 255, 0.05);
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .glass-card:hover {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -5px rgba(0,0,0,0.4), 0 0 20px rgba(16, 185, 129, 0.1); /* Subtle Emerald Glow */
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px) scale(1.005);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.08); /* Luxury Glow */
         }
 
         /* Tech Flow Arrow */
         .arrow-flow {
             color: #525252;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             margin: 0 6px;
         }
 
@@ -86,48 +80,48 @@
 
         /* Trust Badge Glow */
         .trust-glow {
-            box-shadow: 0 0 15px rgba(234, 179, 8, 0.4);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
         }
     </style>
 </head>
-<body class="selection:bg-emerald-500/30 selection:text-white">
+<body class="selection:bg-white/20">
 
     <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-void/80 backdrop-blur-xl">
-        <div class="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
-            <div class="font-bold tracking-tighter text-lg md:text-xl text-white">H | C</div>
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-bold tracking-tighter text-xl text-white">H | C</div>
             
-            <div class="hidden md:flex gap-8 text-xs md:text-sm text-neutral-400 font-medium tracking-wide">
+            <div class="hidden md:flex gap-8 text-sm text-neutral-400 font-medium">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#architecture" class="hover:text-white transition-colors">Architecture</a>
                 <a href="#projects" class="hover:text-white transition-colors">Work</a>
                 <a href="#journal" class="hover:text-white transition-colors">Journal</a>
             </div>
             
-            <a href="mailto:harshitsinghnitj@gmail.com" class="px-5 py-2 text-[11px] font-bold bg-white text-black rounded-full hover:bg-neutral-200 transition-transform hover:scale-105">
+            <a href="mailto:harshitsinghnitj@gmail.com" class="px-5 py-2 text-xs font-bold bg-white text-black rounded-full hover:bg-neutral-200 transition-transform hover:scale-105">
                 Hire Me
             </a>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 pt-32 pb-24 space-y-24 md:space-y-32">
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-24 space-y-32">
         
-        <section id="about" class="min-h-[60vh] flex flex-col justify-center relative">
-            <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-white/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <section id="about" class="min-h-[65vh] flex flex-col justify-center relative">
+            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-            <div class="relative z-10 space-y-6 md:space-y-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] md:text-[11px] text-neutral-300 font-mono tracking-wider">
+            <div class="relative z-10 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[11px] text-neutral-300 font-mono tracking-wider">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     SOLVING REAL WORLD CHAOS
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-[1.15] text-white">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-white">
                     Hi, I am Harshit Choudhary.<br>
-                    I build the <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-200 to-white">Intelligent System</span><br>
+                    I build <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-white">AI systems</span><br>
                     for Global Trade.
                 </h1>
                 
-                <p class="max-w-2xl text-base md:text-lg text-neutral-400 leading-relaxed font-light">
-                    Global trade runs on messy paperwork, blind trust, and middlemen. <br class="hidden md:block">
+                <p class="max-w-2xl text-lg text-neutral-400 leading-relaxed font-light">
+                    Global trade runs on messy paperwork, blind trust, and middlemen. <br>
                     I am the <strong>Founding Engineer</strong> replacing this chaos with <strong>Agentic AI</strong>—building systems that verify trust, protect farmers, and close deals while humans sleep.
                 </p>
 
@@ -135,11 +129,11 @@
                     "My vision is simple: I can solve problems in any industry—Agriculture, Finance, or Logistics—by interlinking AI agents with deep human reality."
                 </div>
 
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#architecture" class="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-neutral-200 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#architecture" class="px-7 py-3.5 bg-white text-black font-bold rounded-full hover:bg-neutral-200 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                         View The Architecture <i data-lucide="arrow-down" class="w-4 h-4"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/harshit-choudhary-905aba282" target="_blank" class="px-6 py-3 border border-white/10 text-sm rounded-full hover:bg-white/5 transition-colors text-white flex items-center gap-2">
+                    <a href="https://www.linkedin.com/in/harshit-choudhary-905aba282" target="_blank" class="px-7 py-3.5 border border-white/10 rounded-full hover:bg-white/5 transition-colors text-white flex items-center gap-2">
                         <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
                     </a>
                 </div>
@@ -147,181 +141,181 @@
         </section>
 
         <section id="architecture">
-            <div class="flex items-center gap-3 mb-10">
+            <div class="flex items-center gap-3 mb-12">
                 <span class="font-mono text-xs text-neutral-600">/01</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-white">Engineering The Solution</h2>
+                <h2 class="text-3xl font-bold text-white">Engineering The Solution</h2>
             </div>
 
-            <div class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-10 opacity-[0.03] pointer-events-none">
+            <div class="glass-card rounded-2xl p-6 md:p-10 border-l-4 border-l-emerald-500 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
                     <i data-lucide="network" class="w-64 h-64 text-white"></i>
                 </div>
 
-                <div class="flex flex-col md:flex-row justify-between mb-8 relative z-10 border-b border-white/5 pb-6">
+                <div class="flex flex-col md:flex-row justify-between mb-8 relative z-10">
                     <div>
-                        <h3 class="text-2xl font-bold text-white">Founding Engineer</h3>
-                        <p class="text-emerald-400 text-base mt-1 font-medium">HindTrade AI</p>
+                        <h3 class="text-3xl font-bold text-white">Founding Engineer</h3>
+                        <a href="https://hindtradeai.vercel.app/" target="_blank" class="text-emerald-400 text-lg mt-1 font-medium block hover:text-emerald-300 transition-colors">HindTrade AI</a>
                     </div>
                     <div class="text-right mt-2 md:mt-0">
-                        <span class="font-mono text-xs text-neutral-500">2025 - Present</span>
+                        <span class="font-mono text-sm text-neutral-500">2025 - Present</span>
                     </div>
                 </div>
 
-                <p class="text-neutral-300 text-base md:text-lg mb-12 leading-relaxed max-w-3xl relative z-10">
+                <p class="text-neutral-300 text-lg mb-12 leading-relaxed max-w-3xl relative z-10">
                     Trade is 10% moving goods and 90% managing information. I architect the <strong>OS (Operating System)</strong> that identifies manual leaks and plugs them with autonomous agents.
                 </p>
 
-                <div class="mb-14 relative pl-6 border-l border-white/10 group hover:border-emerald-500/30 transition-colors">
+                <div class="mb-14 relative pl-6 border-l border-white/10">
                     <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-gold rounded-full trust-glow"></div>
-                    <h4 class="text-lg md:text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="sprout" class="w-5 h-5 text-gold"></i>
                         The Agri-Connect Agent (Middleman Remover)
                     </h4>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mt-5">
-                        <div class="bg-black/20 p-5 rounded-lg border border-white/5">
-                            <span class="text-[10px] font-mono text-danger uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 leading-relaxed">
-                                <strong>Exploitation.</strong> Farmers sell cheap to agents who sell at 10x. No direct access to buyers.
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Exploitation by Middlemen.</strong> Farmers sell at dirt-cheap rates to agents who sell at 10x to manufacturers. Farmers have no direct access to buyers.
                             </p>
                         </div>
-                        <div class="bg-emerald-900/10 p-5 rounded-lg border border-gold/20">
-                            <span class="text-[10px] font-mono text-gold uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 font-mono leading-relaxed">
-                                Upload Kisan Card <span class="arrow-flow">→</span> Verified Profile <span class="arrow-flow">→</span> <strong>Direct connect to Manufacturers</strong>.
+                        <div class="bg-white/5 p-5 rounded-lg border border-gold/20">
+                            <span class="text-xs font-mono text-gold uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                <strong>Identity Verification:</strong> Farmer uploads Kisan Card/Aadhaar <span class="arrow-flow">→</span> Verified Profile Created <span class="arrow-flow">→</span> <strong>Direct connect to Manufacturers</strong> (Zero Commission).
                                 <br><br>
-                                <span class="text-white font-bold italic text-xs">Vision:</span> Households request "Bulk Organic" direct from source.
+                                <span class="text-white font-bold italic">The Integrated Vision:</span> Regular households can connect here to request "Bulk Organic Farming" directly from the source. Farm-to-Table, fully digitized.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-14 relative pl-6 border-l border-white/10 group hover:border-emerald-500/30 transition-colors">
+                <div class="mb-14 relative pl-6 border-l border-white/10">
                     <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-lg md:text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-500"></i>
                         The Gatekeeper & Trust Agent
                     </h4>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mt-5">
-                        <div class="bg-black/20 p-5 rounded-lg border border-white/5">
-                            <span class="text-[10px] font-mono text-danger uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 leading-relaxed">
-                                <strong>Anonymous Fraud.</strong> Scammers create fake profiles, take advances, and vanish.
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Anonymous Fraud.</strong> Currently, anyone can register on B2B platforms. Scammers create fake profiles, take advances, and vanish. No way to verify history.
                             </p>
                         </div>
-                        <div class="bg-emerald-900/10 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 font-mono leading-relaxed">
-                                Scan Govt DBs <span class="arrow-flow">→</span> Assign <strong>Risk Score (0-100)</strong>.
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                User Registers <span class="arrow-flow">→</span> <strong>Gatekeeper Agent</strong> scans Govt DBs <span class="arrow-flow">→</span> Assigns <strong>Risk Score (0-100)</strong>.
                                 <br><br>
-                                <span class="text-white font-bold text-xs">Result:</span> Verified public profiles with Repo & History.
+                                <span class="text-white font-bold">The "Mini-LinkedIn" Effect:</span> Verified companies get a public profile showcasing <strong>Repo, Past Shipments, Awards, & Connections</strong>.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-14 relative pl-6 border-l border-white/10 group hover:border-emerald-500/30 transition-colors">
+                <div class="mb-14 relative pl-6 border-l border-white/10">
                     <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-lg md:text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="bot" class="w-5 h-5 text-emerald-500"></i>
                         The Sales & Networking Agent
                     </h4>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mt-5">
-                        <div class="bg-black/20 p-5 rounded-lg border border-white/5">
-                            <span class="text-[10px] font-mono text-danger uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 leading-relaxed">
-                                <strong>Dead Leads.</strong> Weeks of cold calls. Critical trade news is often missed.
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Dead Leads & Missed News.</strong> Finding buyers takes weeks of cold calls. Critical trade news (duty changes) is often missed until it's too late.
                             </p>
                         </div>
-                        <div class="bg-emerald-900/10 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="zap" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 font-mono leading-relaxed">
-                                <strong>Auto-Connect:</strong> Scrape demands <span class="arrow-flow">→</span> Match Product <span class="arrow-flow">→</span> Auto-Request.
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                <strong>Auto-Connect:</strong> Agent scrapes demands <span class="arrow-flow">→</span> Matches with user's product <span class="arrow-flow">→</span> Sends automated connection request.
                                 <br><br>
-                                <strong>News Engine:</strong> Daily hyper-relevant trade news.
+                                <strong>News Engine:</strong> Daily aggregation of trade news relevant <em>only</em> to the user's sector.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-14 relative pl-6 border-l border-white/10 group hover:border-emerald-500/30 transition-colors">
+                <div class="mb-14 relative pl-6 border-l border-white/10">
                     <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-lg md:text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="file-check" class="w-5 h-5 text-emerald-500"></i>
                         The CA & Finance Agent (UDIN)
                     </h4>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mt-5">
-                        <div class="bg-black/20 p-5 rounded-lg border border-white/5">
-                            <span class="text-[10px] font-mono text-danger uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 leading-relaxed">
-                                <strong>The 3-Day Lag.</strong> Manual Networth/15CB certs take days. Drafting, signing, scanning takes too long.
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>The 3-Day Lag.</strong> Manual coordination for Networth/15CB certificates. Users send data, wait for drafting, signing, and scanning. High risk of forgery.
                             </p>
                         </div>
-                        <div class="bg-emerald-900/10 p-5 rounded-lg border border-emerald-500/20 flex flex-col justify-between">
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20 flex flex-col justify-between">
                             <div>
-                                <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                                <p class="text-sm text-neutral-300 font-mono leading-relaxed">
-                                    Pre-fill Data <span class="arrow-flow">→</span> Digital Sign <span class="arrow-flow">→</span> <strong>Verify UDIN via API</strong>.
+                                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                                <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                    Agent Pre-fills Data <span class="arrow-flow">→</span> CA Digitally Signs <span class="arrow-flow">→</span> <strong>Agent verifies UDIN via API</strong>.
                                 </p>
                             </div>
-                            <div class="mt-4 pt-4 border-t border-emerald-500/10 flex flex-col gap-2">
+                            <div class="mt-4 pt-4 border-t border-white/10 flex flex-col gap-2">
                                 <div class="flex justify-between items-center text-xs font-mono text-neutral-500">
                                     <span>Legacy: <span class="line-through decoration-danger">₹3,000</span> (4 Days)</span>
                                     <span class="text-danger">High Cost</span>
                                 </div>
                                 <div class="flex justify-between items-center text-sm font-bold font-mono text-emerald-400">
                                     <span>AI Cost: ₹1,500 (10 Mins)</span>
-                                    <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 text-[10px] tracking-wide">50% SAVED</span>
+                                    <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 text-[10px]">50% SAVED</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-14 relative pl-6 border-l border-white/10 group hover:border-emerald-500/30 transition-colors">
+                <div class="mb-14 relative pl-6 border-l border-white/10">
                     <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-lg md:text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="truck" class="w-5 h-5 text-emerald-500"></i>
                         Logistics & Sample Protection Agent
                     </h4>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mt-5">
-                        <div class="bg-black/20 p-5 rounded-lg border border-white/5">
-                            <span class="text-[10px] font-mono text-danger uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 leading-relaxed">
-                                <strong>Sample Theft.</strong> Expensive samples get "lost" or opened. No accountability on opening events.
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Sample Theft & Wastage.</strong> Expensive samples sent to buyers often get "lost" or opened without accountability. No live tracking of <em>opening</em> events.
                             </p>
                         </div>
-                        <div class="bg-emerald-900/10 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 font-mono leading-relaxed">
-                                Unique QR <span class="arrow-flow">→</span> Stick on Sample <span class="arrow-flow">→</span> Receiver Scans <span class="arrow-flow">→</span> <strong>Instant "Opened" Webhook</strong>.
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Unique QR Generation <span class="arrow-flow">→</span> Stick on Sample <span class="arrow-flow">→</span> Receiver Scans QR <span class="arrow-flow">→</span> <strong>Instant "Sample Opened" Webhook</strong> sent to Exporter.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative pl-6 border-l border-white/10 group hover:border-emerald-500/30 transition-colors">
+                <div class="relative pl-6 border-l border-white/10">
                     <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-lg md:text-xl font-bold text-white mb-2 flex items-center gap-2">
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="scale" class="w-5 h-5 text-emerald-500"></i>
                         The Global Lawyer (HS Codes)
                     </h4>
                     
-                    <div class="grid md:grid-cols-2 gap-6 mt-5">
-                        <div class="bg-black/20 p-5 rounded-lg border border-white/5">
-                            <span class="text-[10px] font-mono text-danger uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 leading-relaxed">
-                                <strong>Info Asymmetry.</strong> 180+ countries. 1000s of changing HS codes. Manual search is risky.
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Information Asymmetry.</strong> 180+ countries. 1000s of changing HS codes. Static databases fail. Manual Google search is inefficient.
                             </p>
                         </div>
-                        <div class="bg-emerald-900/10 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2 mb-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 font-mono leading-relaxed">
-                                Query <strong>Vector DB</strong> <span class="arrow-flow">→</span> Google Search <span class="arrow-flow">→</span> <strong>Perplexity Live Search</strong> <span class="arrow-flow">→</span> Compliant Doc.
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Query <strong>Vector DB</strong> <span class="arrow-flow">→</span> If null, perform <strong>Google Search</strong> <span class="arrow-flow">→</span> <strong>Perplexity Web Search</strong> for latest laws <span class="arrow-flow">→</span> Auto-generate compliant doc.
                             </p>
                         </div>
                     </div>
@@ -333,7 +327,7 @@
                 <div class="relative group">
                     <div class="absolute -left-[21px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600"></div>
                     <h3 class="text-xl font-bold text-white">Ex-Founder & Operator <span class="text-neutral-500 font-normal text-sm ml-2">Himrock Exports</span></h3>
-                    <p class="text-neutral-400 mt-2 max-w-2xl text-sm leading-relaxed">
+                    <p class="text-neutral-400 mt-2 max-w-2xl text-sm">
                         Built and ran an export business from 0 to 1. This operational experience gave me the "Founder's Eye" to spot the exact inefficiencies I now solve with code.
                     </p>
                 </div>
@@ -341,35 +335,35 @@
         </section>
 
         <section id="projects">
-            <div class="flex items-center gap-3 mb-10">
+            <div class="flex items-center gap-3 mb-12">
                 <span class="font-mono text-xs text-neutral-600">/02</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-white">Selected Works</h2>
+                <h2 class="text-3xl font-bold text-white">Selected Works</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <a href="https://hindtradeai.vercel.app/" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group cursor-pointer">
+                <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
                     <div>
                         <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="globe" class="w-8 h-8 text-neutral-500 group-hover:text-emerald-400 transition-colors"></i>
+                            <i data-lucide="globe" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
                             <div class="p-2 bg-white/5 rounded-full group-hover:bg-white group-hover:text-black transition-all">
                                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Global Trade OS (MVP)</h3>
+                        <h3 class="text-xl font-bold mb-3 text-white">Global Trade OS</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-                            The core platform hosting the CA and Logistics agents. Live production build.
+                            The core platform hosting the CA and Logistics agents. Built for scale using Next.js.
                         </p>
                     </div>
                     <div class="pt-6 border-t border-white/5 flex gap-2">
                         <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Next.js</span>
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Live</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">AI Agents</span>
                     </div>
                 </a>
 
-                <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group cursor-pointer">
+                <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
                     <div>
                         <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="database" class="w-8 h-8 text-neutral-500 group-hover:text-emerald-400 transition-colors"></i>
+                            <i data-lucide="database" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
                             <div class="p-2 bg-white/5 rounded-full group-hover:bg-white group-hover:text-black transition-all">
                                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
@@ -385,10 +379,10 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group cursor-pointer">
+                <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
                     <div>
                         <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="scan-line" class="w-8 h-8 text-neutral-500 group-hover:text-emerald-400 transition-colors"></i>
+                            <i data-lucide="scan-line" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
                             <div class="p-2 bg-white/5 rounded-full group-hover:bg-white group-hover:text-black transition-all">
                                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
@@ -407,20 +401,20 @@
         </section>
 
         <section id="journal" class="max-w-4xl mx-auto">
-            <div class="flex items-center gap-3 mb-10">
+            <div class="flex items-center gap-3 mb-12">
                 <span class="font-mono text-xs text-neutral-600">/03</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-white">The Journal</h2>
+                <h2 class="text-3xl font-bold text-white">The Journal</h2>
             </div>
 
             <div class="space-y-6">
                 <div class="glass-card rounded-xl p-8 cursor-pointer group" onclick="toggleJournal('entry1', this)">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">God, Brain & The Dopamine Loop</h3>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">God, Brain & The Dopamine Loop</h3>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
                     </div>
-                    <p class="text-xs text-neutral-500 mt-2 font-mono">Dec 19, 2024 • Neuroscience</p>
+                    <p class="text-sm text-neutral-500 mt-2">Dec 19, 2024 • Neuroscience</p>
 
-                    <div id="entry1" class="journal-content text-neutral-400 leading-relaxed font-light text-sm md:text-base">
+                    <div id="entry1" class="journal-content text-neutral-400 leading-relaxed font-light">
                         <p class="mb-4">We believe we are the pilots of our lives, but neuroscience suggests we are passengers. The subconscious autopilot drives 95% of our decisions. Religion was perhaps the first "operating system" designed to override these base impulses.</p>
                         <p class="mb-4">Today, social media exploits this same hardware. When you reach for your phone, it's not you—it's a dopamine loop. As an engineer, I see this as a bug in our biological code. We must build systems to scale our minds, not just our tech.</p>
                     </div>
@@ -428,12 +422,12 @@
 
                 <div class="glass-card rounded-xl p-8 cursor-pointer group" onclick="toggleJournal('entry2', this)">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">The "Top 1%" Filter Effect</h3>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">The "Top 1%" Filter Effect</h3>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
                     </div>
-                    <p class="text-xs text-neutral-500 mt-2 font-mono">Jan 10, 2025 • Environment</p>
+                    <p class="text-sm text-neutral-500 mt-2">Jan 10, 2025 • Environment</p>
 
-                    <div id="entry2" class="journal-content text-neutral-400 leading-relaxed font-light text-sm md:text-base">
+                    <div id="entry2" class="journal-content text-neutral-400 leading-relaxed font-light">
                         <p class="mb-4">People ask what makes NITs/IITs special. It's not the syllabus; the books are the same everywhere. It's the **Filter**.</p>
                         <p>These students are already the top 1% selected from millions via JEE. You are thrown into a room with people from 29 different states, all competitively driven. You don't work hard to stand out; you work hard just to survive. That environment creates an automatic standard of excellence that stays with you forever.</p>
                     </div>
@@ -441,12 +435,12 @@
 
                 <div class="glass-card rounded-xl p-8 cursor-pointer group" onclick="toggleJournal('entry3', this)">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">The Cost of Inaction</h3>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">The Cost of Inaction</h3>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
                     </div>
-                    <p class="text-xs text-neutral-500 mt-2 font-mono">Feb 02, 2025 • Philosophy</p>
+                    <p class="text-sm text-neutral-500 mt-2">Feb 02, 2025 • Philosophy</p>
 
-                    <div id="entry3" class="journal-content text-neutral-400 leading-relaxed font-light text-sm md:text-base">
+                    <div id="entry3" class="journal-content text-neutral-400 leading-relaxed font-light">
                         <p class="mb-4">In a world of infinite leverage (Code & Media), the cost of trying is zero, but the cost of inaction is infinite.</p>
                         <p>Most people overestimate the risk of doing something new and underestimate the risk of staying in the same place. Building HindTrade taught me that the "perfect plan" is a myth. You only find the solution by creating the problem first.</p>
                     </div>
@@ -457,8 +451,8 @@
         <footer class="border-t border-white/5 pt-20 mt-20">
             <div class="flex flex-col md:flex-row justify-between items-start gap-10">
                 <div class="space-y-4">
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Let's build.</h2>
-                    <a href="mailto:harshitsinghnitj@gmail.com" class="text-neutral-400 hover:text-white transition-colors block font-mono text-sm">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">Let's build.</h2>
+                    <a href="mailto:harshitsinghnitj@gmail.com" class="text-neutral-400 hover:text-white transition-colors block font-mono">
                         harshitsinghnitj@gmail.com
                     </a>
                     <a href="tel:+916283849492" class="text-neutral-400 hover:text-white transition-colors block font-mono text-sm tracking-wide">
