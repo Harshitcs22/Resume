@@ -1,2 +1,1 @@
-# Resume
-Harshit Choudhary resume 
+
