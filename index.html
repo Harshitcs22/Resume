@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth bg-[#030712]">
+<html lang="en" class="scroll-smooth bg-black">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshit Choudhary | Future Systems Architect</title>
-    <meta name="description" content="Harshit Choudhary - Founding Engineer & AI Architect. Building the operating system for global trade.">
+    <title>Harshit Choudhary | The Architect</title>
+    <meta name="description" content="Harshit Choudhary - Founding Engineer. Building autonomous trade systems.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -20,23 +20,22 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Space Grotesk', 'monospace'], // Using Space Grotesk for a tech-mono feel
+                        mono: ['Space Grotesk', 'monospace'],
                     },
                     colors: {
-                        dark: '#030712', // Deepest black-blue
-                        'dark-surface': '#0B1121', // Slightly lighter surface
-                        accent: '#6366f1', // Indigo core
-                        'accent-cyan': '#06b6d4', // Secondary cyan glow
-                        'accent-purple': '#a855f7', // Purple glow
+                        black: '#000000',
+                        obsidian: '#050505',
+                        charcoal: '#0a0a0a',
+                        glass: 'rgba(255, 255, 255, 0.03)',
+                        silver: '#e2e8f0',
                     },
                     backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'metallic-text': 'linear-gradient(to bottom right, #ffffff, #94a3b8, #64748b)',
-                        'glow-border': 'linear-gradient(to right, #6366f1, #06b6d4)',
+                        'chrome-text': 'linear-gradient(to bottom, #ffffff 30%, #94a3b8 100%)',
+                        'luxury-gradient': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
                     },
                     boxShadow: {
-                        'neon': '0 0 20px -5px rgba(99, 102, 241, 0.4), 0 0 10px -3px rgba(6, 182, 212, 0.3)',
-                        'glass-edge': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.15), 0 5px 15px -5px rgba(0, 0, 0, 0.5)',
+                        'highlight': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
+                        'glow-white': '0 0 20px -5px rgba(255, 255, 255, 0.15)',
                     }
                 }
             }
@@ -44,246 +43,264 @@
     </script>
 
     <style>
-        /* Core Cinematic Styles */
+        /* LUXURY BLACK AESTHETIC */
         body {
-            color: #e2e8f0;
+            background-color: #000000;
+            color: #d4d4d8;
             overflow-x: hidden;
         }
 
-        /* The Living Background Ambience */
-        .ambient-light-1 {
+        /* Subtle Noise Texture (Like Matte Paint) */
+        .noise-overlay {
             position: fixed;
-            top: -20%;
-            left: -10%;
-            width: 70vw;
-            height: 70vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
-            filter: blur(80px);
-            z-index: -2;
-            animation: floatSlow 20s infinite alternate ease-in-out;
-        }
-        .ambient-light-2 {
-            position: fixed;
-            bottom: -20%;
-            right: -10%;
-            width: 60vw;
-            height: 60vh;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
-            filter: blur(80px);
-            z-index: -2;
-            animation: floatSlow 15s infinite alternate-reverse ease-in-out;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        @keyframes floatSlow {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 10%) scale(1.1); }
+        /* The "Spotlight" Effect */
+        .spotlight {
+            background: radial-gradient(circle at top center, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80vh;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        /* Metallic Text Effect */
+        /* Chrome Text */
         .text-chrome {
-            background: linear-gradient(to bottom right, #ffffff 20%, #94a3b8 80%);
+            background: linear-gradient(to bottom, #ffffff 0%, #cbd5e1 50%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 20px rgba(255,255,255,0.1);
         }
 
-        /* Ultra-Premium Dark Glass Card */
-        .glass-card-premium {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-            backdrop-filter: blur(16px);
+        /* Obsidian Glass Cards */
+        .obsidian-card {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
-        .glass-card-premium:hover {
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+        
+        .obsidian-card:hover {
+            background: rgba(20, 20, 20, 0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px -5px rgba(0, 0, 0, 1), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
-        /* Tech Tile (Skill Box) specific styles */
+        /* Tech Tile Animation */
         .tech-tile {
             position: relative;
-            background: linear-gradient(145deg, #0B1121, #050914);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #050505;
+            overflow: hidden;
         }
-        .tech-tile::before { /* The glow gradient border hidden by default */
+        .tech-tile::after {
             content: '';
             position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1.5px; /* Border width */
-            background: linear-gradient(to right, #6366f1, #06b6d4);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
         }
-        .tech-tile:hover::before {
-            opacity: 1;
+        .tech-tile:hover::after {
+            left: 100%;
+            transition: 0.7s ease-in-out;
         }
 
-        /* Scroll Reveal Utility */
-        .reveal-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        /* Reveal Animation */
+        .reveal-up { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal-up.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
     </style>
 </head>
-<body class="antialiased selection:bg-accent/30 selection:text-white">
+<body class="antialiased selection:bg-white selection:text-black">
 
-    <div class="ambient-light-1"></div>
-    <div class="ambient-light-2"></div>
-    <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4gPGcgaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDMiLz4gPC9nPiA8L3N2Zz4=')] opacity-20 z-[-1] pointer-events-none"></div>
+    <div class="noise-overlay"></div>
+    <div class="spotlight"></div>
 
-    <nav class="fixed w-full z-50 top-0 py-4 px-6 bg-dark/50 backdrop-blur-xl border-b border-white/5">
+    <nav class="fixed w-full z-40 top-0 py-6 px-8 mix-blend-difference">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <span class="font-mono font-bold text-lg tracking-widest text-white">
-                HARSHIT<span class="text-accent">.</span>
+            <span class="font-mono font-bold text-lg tracking-[0.2em] text-white">
+                HARSHIT<span class="text-slate-500">.</span>
             </span>
-            <div class="flex items-center gap-6 text-sm font-mono text-slate-400">
-                <a href="#work" class="hover:text-white transition-colors hidden sm:block">/WORK</a>
-                <a href="#stack" class="hover:text-white transition-colors hidden sm:block">/STACK</a>
-                <a href="mailto:harshitsinghnitj@gmail.com" class="px-4 py-2 bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 rounded text-white transition-all duration-300">
-                    CONNECT
-                </a>
+            <div class="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest text-slate-400">
+                <a href="#work" class="hover:text-white transition-colors uppercase">Selected Work</a>
+                <a href="#stack" class="hover:text-white transition-colors uppercase">Architecture</a>
             </div>
+            <a href="mailto:harshitsinghnitj@gmail.com" class="text-xs font-bold font-mono text-black bg-white px-5 py-2 rounded hover:bg-slate-200 transition-colors">
+                CONTACT
+            </a>
         </div>
     </nav>
 
-    <header class="min-h-screen flex items-center justify-center relative px-6">
-        <div class="max-w-5xl mx-auto text-center z-10 flex flex-col items-center">
+    <header class="min-h-screen flex flex-col justify-center items-center px-6 relative">
+        <div class="max-w-6xl w-full text-center z-10">
             
-            <div class="reveal-up inline-flex items-center gap-3 px-4 py-2 rounded-full bg-dark-surface border border-white/10 mb-8">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                </span>
-                <span class="font-mono text-xs text-slate-300 tracking-widest uppercase">Founding Engineer & AI Architect</span>
+            <div class="reveal-up flex justify-center mb-10">
+                <div class="px-4 py-1.5 border border-white/10 rounded-full bg-white/5 backdrop-blur-md">
+                    <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-300">Founding Engineer</span>
+                </div>
             </div>
 
-            <h1 class="reveal-up delay-1 font-mono text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
-                <span class="text-chrome block">BUILDING THE</span>
-                <span class="bg-gradient-to-r from-accent via-accent-cyan to-accent bg-clip-text text-transparent block mt-2">TRADE OS.</span>
+            <h1 class="reveal-up delay-100 font-mono text-6xl md:text-9xl font-bold tracking-tighter leading-none mb-8">
+                <span class="text-chrome block">SYSTEMS</span>
+                <span class="text-slate-700 block transition-colors duration-700 hover:text-white cursor-default">ARCHITECT.</span>
             </h1>
 
-            <p class="reveal-up delay-2 font-sans text-slate-400 text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-                Hi, I'm Harshit. I replace fragmented manual operations with <span class="text-white font-medium">intelligent, multi-agent AI systems</span> that scale autonomously.
+            <p class="reveal-up delay-200 font-sans text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-16 font-light leading-relaxed">
+                I build <span class="text-white font-medium">autonomous trade operating systems</span>. 
+                Replacing manual fragmentation with high-precision AI logic.
             </p>
 
-            <div class="reveal-up delay-3 flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                <a href="#work" class="group relative px-8 py-4 bg-white text-dark font-bold rounded overflow-hidden transition-all hover:scale-[1.02]">
-                    <div class="absolute inset-0 bg-gradient-to-r from-accent to-accent-cyan opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                    <span class="relative z-10 flex items-center justify-center gap-2">
-                        View Selected Work <i class="fa-solid fa-arrow-down text-sm"></i>
-                    </span>
+            <div class="reveal-up delay-300 flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#work" class="group px-8 py-4 bg-white text-black font-bold text-sm tracking-widest rounded transition-all hover:bg-slate-200 hover:scale-[1.02]">
+                    VIEW WORK
                 </a>
-                <a href="https://hindtradeai.vercel.app" target="_blank" class="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded hover:bg-white/10 hover:border-white/30 transition-all">
-                    Live Demo
+                <a href="https://hindtradeai.vercel.app" target="_blank" class="px-8 py-4 bg-transparent border border-white/20 text-white font-bold text-sm tracking-widest rounded hover:bg-white/5 hover:border-white/40 transition-all">
+                    LIVE DEMO
                 </a>
             </div>
         </div>
+        
+        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
     </header>
 
-    <section id="stack" class="py-32 relative z-10">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="reveal-up mb-16 text-center md:text-left">
-                <h2 class="font-mono text-4xl font-bold text-chrome mb-4">TECH ARSENAL</h2>
-                <p class="text-slate-400 max-w-xl">My core stack for building scalable, agentic systems.</p>
+    <section id="stack" class="py-32 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-end justify-between mb-20 reveal-up">
+                <h2 class="font-mono text-4xl font-bold text-white tracking-tighter">ARSENAL</h2>
+                <div class="h-px w-32 bg-white/20 hidden md:block"></div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="reveal-up tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-solid fa-robot text-4xl text-slate-500 group-hover:text-accent transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">AI Agents</span>
-                </div>
-                
-                <div class="reveal-up delay-1 tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-brands fa-python text-4xl text-slate-500 group-hover:text-accent-cyan transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">Python</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
+                <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up hover:z-10">
+                    <i class="fa-solid fa-microchip text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">AI Agents</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Autonomous Logic</p>
+                    </div>
                 </div>
 
-                <div class="reveal-up delay-2 tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-solid fa-network-wired text-4xl text-slate-500 group-hover:text-accent-purple transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">System Arch</span>
+                <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up delay-100 hover:z-10">
+                    <i class="fa-brands fa-python text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">Python</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Backend Core</p>
+                    </div>
                 </div>
 
-                <div class="reveal-up delay-3 tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-brands fa-js text-4xl text-slate-500 group-hover:text-yellow-400 transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">JavaScript</span>
+                <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up delay-200 hover:z-10">
+                    <i class="fa-solid fa-server text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">System Arch</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Scalability</p>
+                    </div>
                 </div>
 
-                <div class="reveal-up tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-solid fa-globe text-4xl text-slate-500 group-hover:text-blue-500 transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">Global Trade</span>
+                <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up delay-300 hover:z-10">
+                    <i class="fa-solid fa-globe text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">Global Trade</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Domain Expert</p>
+                    </div>
                 </div>
 
-                 <div class="reveal-up delay-1 tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-solid fa-file-shield text-4xl text-slate-500 group-hover:text-green-500 transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">Compliance Logic</span>
+                <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up hover:z-10">
+                    <i class="fa-solid fa-shield-halved text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">Compliance</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Auto-Regulation</p>
+                    </div>
                 </div>
 
-                 <div class="reveal-up delay-2 tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-solid fa-truck-fast text-4xl text-slate-500 group-hover:text-orange-500 transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">Logistics Auto</span>
+                 <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up delay-100 hover:z-10">
+                    <i class="fa-solid fa-truck-fast text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">Logistics</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Fleet Auto</p>
+                    </div>
                 </div>
 
-                 <div class="reveal-up delay-3 tech-tile rounded-xl p-6 group flex flex-col items-center justify-center gap-4 text-center transition-all duration-500 hover:shadow-neon hover:-translate-y-1 cursor-default">
-                    <i class="fa-solid fa-cloud text-4xl text-slate-500 group-hover:text-accent-cyan transition-colors duration-500"></i>
-                    <span class="font-mono text-sm font-bold text-slate-300 group-hover:text-white tracking-wider">Cloud / API</span>
+                 <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up delay-200 hover:z-10">
+                    <i class="fa-brands fa-react text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">Frontend</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">React / Next</p>
+                    </div>
+                </div>
+
+                 <div class="tech-tile aspect-square p-8 flex flex-col justify-between group reveal-up delay-300 hover:z-10">
+                    <i class="fa-solid fa-bolt text-2xl text-slate-600 group-hover:text-white transition-colors duration-500"></i>
+                    <div>
+                        <h3 class="font-mono text-sm text-white mb-1">Performance</h3>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Optimization</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="work" class="py-32 relative z-10">
+    <section id="work" class="py-32 bg-black">
         <div class="max-w-6xl mx-auto px-6">
             <div class="reveal-up mb-16">
-                <h2 class="font-mono text-4xl font-bold text-chrome mb-4">FLAGSHIP WORK</h2>
+                <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-slate-500 block mb-2">Flagship Project</span>
+                <h2 class="font-mono text-4xl md:text-5xl font-bold text-white tracking-tighter">HINDTRADE AI</h2>
             </div>
 
-            <div class="reveal-up glass-card-premium rounded-2xl p-8 md:p-12 relative overflow-hidden group">
-                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4gPGcgaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4gPC9nPiA8L3N2Zz4=')] opacity-50 mix-blend-overlay z-0 pointer-events-none"></div>
+            <div class="obsidian-card rounded-none border-t border-b border-white/20 p-8 md:p-16 relative group reveal-up">
                 
-                <div class="relative z-10 grid lg:grid-cols-5 gap-12 items-center">
-                    <div class="lg:col-span-3">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded bg-accent/10 border border-accent/30 text-accent text-xs font-mono tracking-wider uppercase">
-                            <i class="fa-solid fa-star text-[10px]"></i> Founding Role
-                        </div>
-                        <h3 class="font-mono text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">HindTrade AI</h3>
-                        <p class="text-xl text-accent-cyan mb-6 font-mono">Product Architect & Founding Engineer</p>
-                        
-                        <p class="text-slate-300 leading-relaxed mb-8 text-lg">
-                            An AI-powered Global Trade Operating System unifying exporters, logistics, and compliance into a single intelligent workflow. <span class="text-white">Replaced manual fragmentation with agentic automation across 180+ countries.</span>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h3 class="font-mono text-2xl text-white mb-6">The Global Trade OS.</h3>
+                        <p class="text-slate-400 leading-relaxed mb-8 font-light">
+                            Constructed the architecture for a multi-agent system that unifies exporters, logistics, and compliance. 
+                            <strong class="text-white">Zero-to-One execution.</strong>
                         </p>
 
-                        <div class="flex flex-wrap gap-3 mb-10">
-                            <span class="px-4 py-2 bg-dark-surface border border-white/10 rounded-lg text-xs font-mono text-slate-300">Multi-Agent Systems</span>
-                            <span class="px-4 py-2 bg-dark-surface border border-white/10 rounded-lg text-xs font-mono text-slate-300">Dynamic Compliance</span>
-                            <span class="px-4 py-2 bg-dark-surface border border-white/10 rounded-lg text-xs font-mono text-slate-300">Logistics Pipelines</span>
+                        <div class="space-y-4 mb-10">
+                            <div class="flex items-center gap-4 text-sm text-slate-300">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                                <span>Agentic workflow automation across 180+ countries.</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-sm text-slate-300">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                                <span>Dynamic CA onboarding & UDIN flow generation.</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-sm text-slate-300">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                                <span>Real-time logistics visibility pipeline.</span>
+                            </div>
                         </div>
 
-                        <a href="https://hindtradeai.vercel.app" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-white text-dark font-bold rounded transition-transform hover:translate-x-2">
-                            DEPLOYED PRODUCT <i class="fa-solid fa-arrow-right-long"></i>
+                        <a href="https://hindtradeai.vercel.app" target="_blank" class="inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:opacity-70 transition-opacity text-sm tracking-widest font-bold">
+                            VISIT PLATFORM <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
                         </a>
                     </div>
 
-                    <div class="lg:col-span-2 grid grid-cols-1 gap-4 font-mono">
-                        <div class="p-6 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-accent/30 transition-colors">
-                            <h4 class="text-slate-400 text-xs uppercase tracking-widest mb-2">Scale</h4>
-                            <p class="text-2xl font-bold text-white">180+ Countries</p>
-                            <p class="text-sm text-slate-500">Compliance logic modeled.</p>
+                    <div class="relative h-64 md:h-full w-full bg-[#0a0a0a] border border-white/5 flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-px opacity-20">
+                            <div class="bg-white/10 col-span-1 row-span-6"></div>
+                            <div class="bg-white/10 col-span-6 row-span-1"></div>
+                            <div class="bg-white/10 col-span-1 row-span-6 col-start-4"></div>
                         </div>
-                         <div class="p-6 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-accent-cyan/30 transition-colors">
-                            <h4 class="text-slate-400 text-xs uppercase tracking-widest mb-2">Automation</h4>
-                            <p class="text-2xl font-bold text-white">Zero-to-One</p>
-                            <p class="text-sm text-slate-500">Entire workflow automated.</p>
-                        </div>
-                         <div class="p-6 bg-dark-surface/50 border border-white/5 rounded-xl hover:border-accent-purple/30 transition-colors">
-                            <h4 class="text-slate-400 text-xs uppercase tracking-widest mb-2">Speed</h4>
-                            <p class="text-2xl font-bold text-white">Instant</p>
-                            <p class="text-sm text-slate-500">CA onboarding & UDIN flows.</p>
+                        <div class="text-center z-10">
+                            <span class="block text-4xl font-mono font-bold text-white mb-2">180+</span>
+                            <span class="text-[10px] uppercase tracking-widest text-slate-500">Compliance Regions</span>
                         </div>
                     </div>
                 </div>
@@ -291,71 +308,57 @@
         </div>
     </section>
 
-    <section class="py-24 border-t border-white/5 relative z-10 bg-dark/50">
-        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    <section class="py-24 bg-black border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">
             <div class="reveal-up">
-                <h3 class="font-mono text-xl font-bold text-white mb-8 flex items-center gap-3">
-                    <i class="fa-solid fa-graduation-cap text-accent"></i> EDUCATION
-                </h3>
-                <div class="pl-4 border-l-2 border-white/10">
-                    <h4 class="text-lg text-white font-bold">B.Tech – Computer Science</h4>
-                    <p class="text-slate-400 mt-1 font-mono text-sm">Dr. B. R. Ambedkar National Institute of Technology (NIT), Jalandhar</p>
+                <h3 class="font-mono text-sm font-bold text-white mb-8 tracking-widest uppercase">Education</h3>
+                <div class="group">
+                    <h4 class="text-xl text-slate-200 font-medium">B.Tech – Computer Science</h4>
+                    <p class="text-slate-500 mt-2 text-sm">NIT Jalandhar</p>
                 </div>
             </div>
             
-            <div class="reveal-up delay-2">
-                <h3 class="font-mono text-xl font-bold text-white mb-8 flex items-center gap-3">
-                    <i class="fa-solid fa-medal text-accent-cyan"></i> CERTIFICATIONS
-                </h3>
-                <ul class="space-y-4 font-mono text-sm text-slate-300">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-accent mt-1"></i> Oracle AI Foundations Associate
+            <div class="reveal-up delay-100">
+                <h3 class="font-mono text-sm font-bold text-white mb-8 tracking-widest uppercase">Certifications</h3>
+                <ul class="space-y-6">
+                    <li class="flex justify-between items-center border-b border-white/5 pb-4 group hover:border-white/20 transition-colors">
+                        <span class="text-slate-300">Oracle AI Foundations</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
                     </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-accent-cyan mt-1"></i> Google Cloud Certified: Generative AI Leader
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-accent-purple mt-1"></i> Advanced AI & Automation Programs
+                    <li class="flex justify-between items-center border-b border-white/5 pb-4 group hover:border-white/20 transition-colors">
+                        <span class="text-slate-300">Google Cloud GenAI Leader</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <footer class="py-32 text-center relative overflow-hidden z-10">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="reveal-up font-mono text-4xl md:text-6xl font-bold text-chrome mb-8 leading-tight">
-                READY TO ENGINEER<br>THE FUTURE?
+    <footer class="py-32 bg-black text-center relative border-t border-white/5">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="reveal-up font-mono text-3xl md:text-5xl font-bold text-white mb-10 tracking-tighter">
+                READY TO BUILD?
             </h2>
-            <div class="reveal-up delay-1 flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-                <a href="mailto:harshitsinghnitj@gmail.com" class="px-8 py-4 bg-white text-dark font-bold rounded w-full sm:w-auto hover:bg-slate-200 transition-colors">
-                    INITIATE CONTACT
-                </a>
-                 <a href="https://linkedin.com/in/harshit-choudhary" target="_blank" class="px-8 py-4 bg-dark-surface border border-white/10 text-white font-bold rounded w-full sm:w-auto hover:bg-white/5 hover:border-white/30 transition-colors">
-                    LINKEDIN PROFILE
-                </a>
+            <div class="reveal-up delay-100 flex justify-center gap-8">
+                <a href="mailto:harshitsinghnitj@gmail.com" class="text-sm font-mono tracking-widest text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white pb-1">EMAIL ME</a>
+                <a href="https://linkedin.com/in/harshit-choudhary" target="_blank" class="text-sm font-mono tracking-widest text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white pb-1">LINKEDIN</a>
             </div>
-            <p class="reveal-up delay-2 font-mono text-xs text-slate-600">© 2025 HARSHIT CHOUDHARY. SYSTEM ONLINE.</p>
+            <p class="reveal-up delay-200 mt-24 text-[10px] text-slate-700 font-mono tracking-widest">© 2025 HARSHIT CHOUDHARY</p>
         </div>
     </footer>
 
     <script>
-        const revealElements = document.querySelectorAll('.reveal-up');
-        
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            const revealPoint = 100;
-
-            revealElements.forEach((reveal) => {
-                const elementTop = reveal.getBoundingClientRect().top;
-                if (elementTop < windowHeight - revealPoint) {
-                    reveal.classList.add('active');
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
             });
-        };
+        }, observerOptions);
 
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll); // Trigger on load
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
