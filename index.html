@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth bg-[#030303]">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshit Choudhary | The Architect</title>
-    <meta name="description" content="Founding Engineer & Systems Architect building the future of global trade.">
-
+    <title>Harshit Choudhary | AI Architect</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
         tailwind.config = {
@@ -21,18 +21,18 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        black: '#030303', // Deepest matte black
-                        surface: '#0C0C0C', // Slightly lighter surface
-                        'surface-hover': '#141414',
-                        accent: '#3B82F6', // Subtle tech blue accent
-                        subtle: '#9CA3AF', // Gray text
+                        bg: "#0A0A0A",
+                        card: "rgba(255, 255, 255, 0.05)",
                     },
-                    backgroundImage: {
-                        'tech-pattern': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%)',
-                        'gradient-surface': 'linear-gradient(145deg, #0C0C0C, #080808)',
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
                     },
-                    boxShadow: {
-                        'glow': '0 0 40px -10px rgba(59, 130, 246, 0.15)',
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
@@ -40,249 +40,355 @@
     </script>
 
     <style>
-        /* DESCRIPTIVE TECH BLACK THEME */
         body {
-            background-color: #030303;
-            color: #ffffff;
+            background-color: #0A0A0A;
+            color: white;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-
-        /* Subtle Noise Overlay for Matte Finish */
-        .noise {
-            position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: 0.02;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
-        /* The Premium Tech Card Style (Not glass, but solid dark surface) */
-        .tech-card {
-            background-color: #0C0C0C;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
             transition: all 0.3s ease;
         }
-        .tech-card:hover {
-            background-color: #141414;
-            border-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        }
+
+        .mask-linear-fade {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+
+        /* Selection Color */
+        ::selection {
+            background: rgba(255, 255, 255, 0.2);
         }
         
-        /* Visual Placeholders (Simulating high-end 3D renders) */
-        .visual-placeholder {
-            background: linear-gradient(45deg, #080808, #111111);
-            position: relative;
-            overflow: hidden;
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        .visual-placeholder::after {
-            content: ''; position: absolute; inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 30px 30px; opacity: 0.5;
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A; 
         }
-
-        /* Scroll Reveal */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="selection:bg-white/20">
 
-    <div class="noise"></div>
-
-    <nav class="fixed w-full z-40 top-0 py-6 px-8 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-[1400px] mx-auto flex items-center justify-between">
-            <span class="font-bold text-xl tracking-tight">
-                HARSHIT<span class="text-accent">.</span>
-            </span>
-            <div class="flex items-center gap-8">
-                 <a href="#work" class="hidden sm:block text-sm font-medium text-subtle hover:text-white transition-colors">Work</a>
-                 <a href="#beyond" class="hidden sm:block text-sm font-medium text-subtle hover:text-white transition-colors">About</a>
-                <a href="mailto:harshitsinghnitj@gmail.com" class="text-sm font-bold bg-white text-black px-6 py-3 rounded hover:bg-subtle transition-colors">
-                    Connect
-                </a>
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0A0A0A]/80 backdrop-blur-xl">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold tracking-tighter text-lg">H | C</div>
+            <div class="flex gap-6 text-sm text-neutral-400 font-medium">
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#journal" class="hover:text-white transition-colors">Journal</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="min-h-[90vh] flex flex-col justify-center pt-32 pb-20 px-6 relative overflow-hidden">
-        <div class="max-w-[1200px] mx-auto w-full z-10">
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-32">
+        
+        <section class="min-h-[70vh] flex flex-col justify-center animate-fade-in-up">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-neutral-300 font-mono">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    Open for Innovation
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tight leading-[1.1]">
+                    Hi, I'm Harshit.
+                    <br />
+                    <span class="text-neutral-500">I build <span class="text-neutral-300">intelligent systems</span> that scale.</span>
+                </h1>
+                
+                <p class="max-w-xl text-lg text-neutral-400 leading-relaxed">
+                    Founding Engineer at HindTrade AI. Specialized in agentic workflows, 
+                    system architecture, and creating digital experiences that respect humans.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-colors flex items-center gap-2">
+                        View Work <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="mailto:harshitsinghnitj@gmail.com" class="px-8 py-3 border border-white/20 rounded-full hover:bg-white/5 transition-colors text-neutral-300">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-4 mb-12">
+                <span class="font-mono text-xs text-neutral-500">/01</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Technical Expertise</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-mono text-neutral-500 uppercase tracking-widest">AI & Automation</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">Agentic Workflows</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">Multi-agent Systems</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">AI Verification Logic</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">Trade Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-mono text-neutral-500 uppercase tracking-widest">Frontend Architecture</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">Next.js</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">React</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">Tailwind CSS</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">UX Workflows</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-mono text-neutral-500 uppercase tracking-widest">Core Engineering</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">Python</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">System Architecture</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">API Design</span>
+                            <span class="px-3 py-1 rounded-md border border-white/5 bg-white/[0.02] text-sm text-neutral-300 hover:border-white/20 transition-colors cursor-default">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="aspect-square flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors"><i data-lucide="brain-circuit" class="w-8 h-8 text-neutral-600"></i></div>
+                    <div class="aspect-square flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors"><i data-lucide="cpu" class="w-8 h-8 text-neutral-600"></i></div>
+                    <div class="aspect-square flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors"><i data-lucide="layers" class="w-8 h-8 text-neutral-600"></i></div>
+                    <div class="aspect-square flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors"><i data-lucide="terminal" class="w-8 h-8 text-neutral-600"></i></div>
+                    <div class="aspect-square flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors"><i data-lucide="globe" class="w-8 h-8 text-neutral-600"></i></div>
+                    <div class="aspect-square flex items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/5 transition-colors"><i data-lucide="box" class="w-8 h-8 text-neutral-600"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-4 mb-12">
+                <span class="font-mono text-xs text-neutral-500">/02</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Work Experience</h2>
+            </div>
             
-            <div class="reveal mb-6">
-                <span class="text-accent font-semibold tracking-wider uppercase text-sm">Founding Engineer & Architect</span>
-            </div>
-
-            <h1 class="reveal delay-1 text-6xl md:text-8xl font-bold tracking-tight leading-[1.1] mb-8">
-                Architecting the<br>
-                Future of Trade.
-            </h1>
-
-            <p class="reveal delay-2 text-subtle text-xl md:text-2xl max-w-3xl font-normal leading-relaxed mb-12">
-                I build heavy-lifting autonomous systems. Replacing fragmented manual operations with high-precision, multi-agent AI infrastructure.
-            </p>
-
-            <div class="reveal delay-2 flex flex-wrap gap-6">
-                <a href="#work" class="px-8 py-4 bg-accent text-white font-bold text-sm rounded hover:bg-blue-600 transition-all">
-                    View Case Study
-                </a>
-                <a href="#stack" class="px-8 py-4 border border-white/20 text-white font-bold text-sm rounded hover:bg-white/5 transition-all">
-                    Technical Core
-                </a>
-            </div>
-        </div>
-
-        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] h-[70%] bg-tech-pattern opacity-50 pointer-events-none -z-10 blur-3xl"></div>
-    </header>
-
-    <section id="work" class="py-32 bg-surface/30 border-t border-white/5">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                
-                <div class="reveal">
-                    <span class="text-accent font-semibold tracking-wider uppercase text-sm mb-4 block">Flagship Protocol</span>
-                    <h2 class="text-5xl font-bold mb-8">HindTrade AI</h2>
+            <div class="relative border-l border-white/10 ml-3 space-y-12 pb-12">
+                <div class="pl-8 relative group">
+                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-white border border-black shadow-[0_0_10px_white]"></div>
                     
-                    <div class="space-y-8 text-subtle text-lg leading-relaxed">
-                        <p>
-                            <strong class="text-white">The Challenge:</strong> Global trade is paralyzed by fragmented documentation, manual compliance checks, and opaque logistics.
-                        </p>
-                        <p>
-                            <strong class="text-white">The Solution:</strong> I architected a Zero-to-One Operating System. A multi-agent AI environment that unifies exporters, logistics, and compliance authorities into a single, autonomous workflow.
-                        </p>
-                        <p>
-                            The system dynamically adapts to regulation changes across <span class="text-white">180+ countries</span>, automating everything from CA onboarding to real-time port visibility.
-                        </p>
-                    </div>
-
-                    <div class="mt-12 flex flex-wrap gap-4">
-                        <div class="px-4 py-2 bg-black border border-white/10 rounded text-sm text-subtle">Multi-Agent Systems</div>
-                        <div class="px-4 py-2 bg-black border border-white/10 rounded text-sm text-subtle">Dynamic Compliance</div>
-                        <div class="px-4 py-2 bg-black border border-white/10 rounded text-sm text-subtle">Logistics Auto</div>
-                    </div>
-
-                    <div class="mt-12">
-                         <a href="https://hindtradeai.vercel.app" target="_blank" class="inline-flex items-center gap-3 text-white font-bold border-b-2 border-accent pb-2 hover:text-accent transition-colors">
-                            Launch Platform Interface <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="reveal delay-1 h-[600px] visual-placeholder rounded-2xl border border-white/10 relative group overflow-hidden">
-                    <div class="absolute inset-0 flex items-center justify-center flex-col gap-6 p-10">
-                        <i class="fa-solid fa-network-wired text-6xl text-accent/50 group-hover:text-accent transition-colors"></i>
-                        <h3 class="text-2xl font-bold text-center">System Architecture Visual</h3>
-                        <p class="text-subtle text-center">Simulating real-time data flow across 180+ global nodes.</p>
-                    </div>
-                    <div class="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stack" class="py-32 relative">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="mb-16 reveal max-w-2xl">
-                <h2 class="text-4xl font-bold mb-6">Technical Arsenal.</h2>
-                <p class="text-subtle text-lg">The core technologies used to build scalable, intelligent infrastructure.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="reveal tech-card p-8 rounded-xl flex flex-col gap-4">
-                    <i class="fa-solid fa-brain text-3xl text-accent"></i>
-                    <h3 class="font-bold text-xl">AI Agents</h3>
-                    <p class="text-sm text-subtle">Autonomous Logic Arch</p>
-                </div>
-                <div class="reveal delay-1 tech-card p-8 rounded-xl flex flex-col gap-4">
-                    <i class="fa-brands fa-python text-3xl text-white"></i>
-                    <h3 class="font-bold text-xl">Python</h3>
-                    <p class="text-sm text-subtle">Backend Core</p>
-                </div>
-                <div class="reveal tech-card p-8 rounded-xl flex flex-col gap-4">
-                    <i class="fa-solid fa-server text-3xl text-white"></i>
-                    <h3 class="font-bold text-xl">System Design</h3>
-                    <p class="text-sm text-subtle">High Scalability</p>
-                </div>
-                <div class="reveal delay-1 tech-card p-8 rounded-xl flex flex-col gap-4">
-                    <i class="fa-solid fa-globe text-3xl text-white"></i>
-                    <h3 class="font-bold text-xl">Global Trade</h3>
-                    <p class="text-sm text-subtle">Domain Expertise</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="beyond" class="py-32 bg-surface/30 border-t border-white/5">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <div class="mb-20 reveal max-w-2xl">
-                 <h2 class="text-4xl font-bold mb-6">Beyond the Terminal.</h2>
-                <p class="text-subtle text-lg">The human elements that shape my approach to engineering and problem-solving.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px]">
-                
-                <div class="reveal tech-card md:col-span-2 p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-4 mb-8">
-                            <i class="fa-solid fa-building-columns text-3xl text-accent"></i>
-                            <span class="text-sm font-semibold uppercase tracking-wider text-subtle">The Foundation</span>
-                        </div>
-                        <h3 class="text-3xl font-bold mb-6">Sri Dasmesh Academy</h3>
-                        <p class="text-subtle text-lg leading-relaxed max-w-xl">
-                            My resilience was forged early in the disciplined environment of an Army background school. This ingrained the rigour I now apply to engineering at <span class="text-white">NIT Jalandhar</span>.
-                        </p>
-                    </div>
-                    <div class="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent"></div>
-                </div>
-
-                <div class="reveal delay-1 tech-card p-10 rounded-2xl flex flex-col relative overflow-hidden">
-                    <h3 class="text-2xl font-bold mb-8">Adrenaline &<br>Discipline.</h3>
-                    <ul class="space-y-6 text-lg text-subtle">
-                        <li class="flex items-center gap-4"><i class="fa-solid fa-mountain text-white"></i> Mountaineer</li>
-                        <li class="flex items-center gap-4"><i class="fa-solid fa-horse-head text-white"></i> Equestrian</li>
-                        <li class="flex items-center gap-4"><i class="fa-solid fa-truck-monster text-white"></i> Offroader</li>
-                    </ul>
-                </div>
-
-                <div class="reveal tech-card p-10 rounded-2xl flex flex-col justify-center gap-4 relative overflow-hidden group">
-                    <i class="fa-solid fa-palette text-4xl text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold">Acrylic Artist.</h3>
-                    <p class="text-subtle">Finding order in chaos through painting.</p>
-                     <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-
-                 <a href="https://instagram.com/baba_aps" target="_blank" class="reveal delay-1 tech-card md:col-span-2 p-8 rounded-2xl flex items-center justify-between group hover:border-accent/50 transition-colors">
-                    <div class="flex items-center gap-6">
-                        <i class="fa-brands fa-instagram text-4xl text-white group-hover:text-accent transition-colors"></i>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
                         <div>
-                            <h3 class="text-xl font-bold">@BABA_APS</h3>
-                            <p class="text-sm text-subtle">Follow the journey.</p>
+                            <h3 class="text-2xl font-semibold">Founding Engineer & Product Architect</h3>
+                            <p class="text-neutral-400 text-lg">HindTrade AI</p>
+                        </div>
+                        <span class="font-mono text-xs text-neutral-500 border border-white/10 px-2 py-1 rounded mt-2 md:mt-0 w-fit">Present</span>
+                    </div>
+                    
+                    <p class="text-neutral-300 mb-6 italic">Building an AI-powered Global Trade Operating System unifying exporters and logistics in 180+ countries.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="text-neutral-400 text-sm leading-relaxed pl-4 border-l border-white/5 hover:border-white/30 transition-colors">Architected a multi-agent AI system automating export documentation & compliance workflows.</li>
+                        <li class="text-neutral-400 text-sm leading-relaxed pl-4 border-l border-white/5 hover:border-white/30 transition-colors">Designed agentic logic adapting dynamically to country-specific regulations instead of static hardcoding.</li>
+                        <li class="text-neutral-400 text-sm leading-relaxed pl-4 border-l border-white/5 hover:border-white/30 transition-colors">Implemented AI-managed logistics workflows: sample tracking, port-level visibility, and custom coordination.</li>
+                        <li class="text-neutral-400 text-sm leading-relaxed pl-4 border-l border-white/5 hover:border-white/30 transition-colors">Led zero-to-one product execution: system architecture, UX workflows, and GTM positioning.</li>
+                    </ul>
+
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="text-[10px] uppercase tracking-wider font-bold text-neutral-500 bg-white/5 px-2 py-1 rounded">Python</span>
+                        <span class="text-[10px] uppercase tracking-wider font-bold text-neutral-500 bg-white/5 px-2 py-1 rounded">Multi-Agent Systems</span>
+                        <span class="text-[10px] uppercase tracking-wider font-bold text-neutral-500 bg-white/5 px-2 py-1 rounded">React</span>
+                        <span class="text-[10px] uppercase tracking-wider font-bold text-neutral-500 bg-white/5 px-2 py-1 rounded">System Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="font-mono text-xs text-neutral-500">/03</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Selected Works</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-lg bg-white/5 w-fit"><i data-lucide="cpu" class="w-5 h-5 text-white"></i></div>
+                            <div class="flex gap-2">
+                               <span class="text-[10px] border border-white/10 px-2 py-0.5 rounded-full text-neutral-400">Repo Inside</span>
+                               <i data-lucide="arrow-up-right" class="w-5 h-5 text-neutral-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Global Trade OS</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">A unified intelligent workflow for exporters, logistics providers, and compliance authorities.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                        <div class="flex gap-2">
+                            <span class="text-xs text-neutral-500">AI Agents</span>
+                            <span class="text-xs text-neutral-500">Next.js</span>
+                            <span class="text-xs text-neutral-500">Python</span>
+                        </div>
+                        <span class="text-xs font-mono text-neutral-600">Production Scale</span>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-lg bg-white/5 w-fit"><i data-lucide="layers" class="w-5 h-5 text-white"></i></div>
+                            <div class="flex gap-2">
+                               <span class="text-[10px] border border-white/10 px-2 py-0.5 rounded-full text-neutral-400">Repo Inside</span>
+                               <i data-lucide="arrow-up-right" class="w-5 h-5 text-neutral-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Cross-Border Compliance Engine</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Modeled international trade regulations and duties into programmable AI logic.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                        <div class="flex gap-2">
+                            <span class="text-xs text-neutral-500">Automation</span>
+                            <span class="text-xs text-neutral-500">Data Modeling</span>
+                        </div>
+                        <span class="text-xs font-mono text-neutral-600">High Complexity</span>
+                    </div>
+                </div>
+
+                 <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-2 rounded-lg bg-white/5 w-fit"><i data-lucide="box" class="w-5 h-5 text-white"></i></div>
+                            <div class="flex gap-2">
+                               <span class="text-[10px] border border-white/10 px-2 py-0.5 rounded-full text-neutral-400">Repo Inside</span>
+                               <i data-lucide="arrow-up-right" class="w-5 h-5 text-neutral-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Logistics Automation Pipeline</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6">Event-driven pipelines translating real-world shipment processes into digital AI management.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                        <div class="flex gap-2">
+                            <span class="text-xs text-neutral-500">Event-Driven</span>
+                            <span class="text-xs text-neutral-500">Tracking</span>
+                        </div>
+                        <span class="text-xs font-mono text-neutral-600">Logistics Tech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-64 md:h-96 rounded-2xl overflow-hidden relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-neutral-900 flex items-center justify-center">
+                <div class="text-center opacity-20 select-none">
+                    <p class="text-6xl font-bold tracking-tighter">SYSTEMS</p>
+                    <p class="text-6xl font-bold tracking-tighter">THINKING</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="journal">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="font-mono text-xs text-neutral-500">/04</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Journal & Thoughts</h2>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-20"></div>
+                
+                <div class="glass-card rounded-xl p-6 border-white/10 bg-black/40 relative">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-white/5 pb-6">
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">How Our Brain Is Controlling Us</h3>
+                            <p class="text-neutral-400">Thoughts on the subconscious, dopamine loops, and the student mind.</p>
+                        </div>
+                        <div class="text-right mt-4 md:mt-0">
+                            <p class="text-sm text-neutral-500 font-mono">Dec 19, 2024</p>
+                            <p class="text-xs text-neutral-600 uppercase tracking-widest mt-1">4 min read</p>
                         </div>
                     </div>
-                    <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform text-white"></i>
-                </a>
 
-            </div>
-        </div>
-    </section>
+                    <div id="journal-content" class="prose prose-invert prose-p:text-neutral-400 prose-headings:text-white max-w-none transition-all duration-700 overflow-hidden max-h-[150px] mask-linear-fade">
+                        <p class="mb-6">We like to believe we are the pilots of our own lives. We sit in the cockpit, hands on the wheel, convinced that every decision—from what to eat to when to study—is a conscious choice. But the neuroscience suggests otherwise. We are merely passengers in a vehicle driven by a silent, autopilot system: the subconscious mind.</p>
+                        
+                        <p class="mb-6"><strong>The College Illusion</strong></p>
+                        <p class="mb-6">College life is perhaps the most critical battleground for this internal war. It is an environment designed to exploit the brain’s reward circuitry. The subconscious craves efficiency and pleasure. It builds habits to save energy. When you reach for your phone the moment you wake up, that isn't <em>you</em> deciding. It’s a dopamine loop cemented by repetition. You are fighting an algorithm that knows you better than you know yourself.</p>
+                        
+                        <p class="mb-6"><strong>The Dopamine Trap</strong></p>
+                        <p class="mb-6">Social validation, infinite scroll, the "next episode" button—these are not random distractions. They are inputs that hijack the brain's primitive desire for novelty. As a student or a builder, your ability to do deep work is your only currency. Yet, we trade this currency for cheap, short-term hits of chemical satisfaction. The brain prioritizes the "now" over the "later" because survival used to depend on it. But in the modern world, success depends on the exact opposite: delayed gratification.</p>
 
-    <footer class="py-20 border-t border-white/5 bg-black text-center">
-        <div class="max-w-[1200px] mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10">Ready to build the future?</h2>
-            <div class="flex justify-center gap-10 mb-16">
-                 <a href="https://linkedin.com/in/harshit-choudhary" class="text-subtle hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-                 <a href="mailto:harshitsinghnitj@gmail.com" class="text-subtle hover:text-white transition-colors"><i class="fa-solid fa-envelope text-2xl"></i></a>
-                 <a href="https://github.com/harshit-choudhary" class="text-subtle hover:text-white transition-colors"><i class="fa-brands fa-github text-2xl"></i></a>
+                        <p class="mb-6"><strong>Rewiring the System</strong></p>
+                        <p class="mb-6">So, how do we take back the controls? Awareness is the first step. You must observe the urge without acting on it. When the brain screams for a distraction, recognize it as a biological signal, not a command. Identity is the second step. Stop saying "I'm trying to focus" and start saying "I am a person who focuses." The subconscious aligns actions with identity.</p>
+                        
+                        <p class="mb-6">We build systems to scale code and trade. It is time we build systems to scale our own minds.</p>
+                    </div>
+
+                    <div id="read-more-overlay" class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d0d0d] to-transparent flex items-end justify-center pb-6 rounded-b-xl">
+                        <button onclick="expandJournal()" class="group flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-sm text-white cursor-pointer">
+                            Read Full Entry <i data-lucide="chevron-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <p class="text-sm text-subtle">© 2025 Harshit Choudhary. Engineered for impact.</p>
-        </div>
-    </footer>
+        </section>
+
+        <footer id="contact" class="border-t border-white/5 pt-20 pb-10">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-10">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Let's build the future.</h2>
+                    <a href="mailto:harshitsinghnitj@gmail.com" class="text-xl text-neutral-400 hover:text-white transition-colors border-b border-white/10 pb-1 hover:border-white">
+                        harshitsinghnitj@gmail.com
+                    </a>
+                </div>
+                
+                <div class="flex gap-6">
+                    <a href="https://github.com" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-white text-neutral-400 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-white text-neutral-400 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="https://instagram.com/baba_aps" target="_blank" class="group p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-white text-neutral-400 transition-all flex items-center gap-2">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <span class="w-0 overflow-hidden group-hover:w-auto group-hover:ml-1 transition-all duration-300 text-xs font-mono">@baba_aps</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-20 flex justify-between text-xs text-neutral-600 font-mono">
+                <span>© 2024 Harshit Choudhary. All rights reserved.</span>
+                <span>NIT Jalandhar</span>
+            </div>
+        </footer>
+
+    </main>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Journal Expand Logic
+        function expandJournal() {
+            const content = document.getElementById('journal-content');
+            const overlay = document.getElementById('read-more-overlay');
+            
+            // Remove mask and max-height constraint
+            content.classList.remove('mask-linear-fade');
+            content.classList.remove('max-h-[150px]');
+            content.classList.add('max-h-[2000px]'); // Allow full height
+            
+            // Hide the button overlay
+            overlay.style.display = 'none';
+        }
     </script>
 </body>
 </html>
-
