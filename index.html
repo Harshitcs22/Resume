@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshit Choudhary | Founding Engineer & AI Architect</title>
+    <title>Harshit Choudhary | Founding Engineer</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
                     colors: {
                         void: "#050505", 
                         glass: "rgba(255, 255, 255, 0.03)",
-                        glassHover: "rgba(255, 255, 255, 0.08)",
+                        glassHover: "rgba(255, 255, 255, 0.07)",
                         emerald: "#10b981", 
                     }
                 }
@@ -38,10 +38,9 @@
             overflow-x: hidden;
         }
 
-        /* Glassmorphism */
         .glass-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -52,14 +51,14 @@
             transform: translateY(-2px);
         }
 
-        /* Text Gradients */
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #a3a3a3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Tech Flow Arrow */
+        .arrow-flow {
+            color: #525252;
+            font-size: 0.8rem;
+            margin: 0 6px;
         }
 
-        /* Journal Logic */
+        /* Journal Expansion */
         .journal-content {
             max-height: 0;
             overflow: hidden;
@@ -83,8 +82,8 @@
             
             <div class="hidden md:flex gap-8 text-sm text-neutral-400 font-medium">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-white transition-colors">Work</a>
+                <a href="#experience" class="hover:text-white transition-colors">Architecture</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
                 <a href="#journal" class="hover:text-white transition-colors">Journal</a>
             </div>
             
@@ -102,28 +101,24 @@
             <div class="relative z-10 space-y-6">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[11px] text-neutral-300 font-mono tracking-wider">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    AVAILABLE FOR GLOBAL ROLES
+                    BUILDING INTELLIGENT TRADE SYSTEMS
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-                    I architect <span class="text-gradient">AI Systems</span><br>
-                    for Global Trade.
+                    Solving <span class="text-white">Trade Inefficiencies</span><br>
+                    with <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-white">Agentic AI.</span>
                 </h1>
                 
                 <p class="max-w-2xl text-lg text-neutral-400 leading-relaxed font-light">
-                    Founding Engineer building the <strong>OS for Logistics & Compliance</strong>. <br>
-                    I combine systems thinking with agentic AI to solve time & money loopholes in the $32T trade market.
+                    Founding Engineer at HindTrade. I build AI architectures that replace manual loopholes with automated logic—saving time, money, and preventing fraud in the $32T global market.
                 </p>
 
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#projects" class="px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-neutral-200 transition-all flex items-center gap-2">
-                        View Architecture <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    <a href="#experience" class="px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-neutral-200 transition-all flex items-center gap-2">
+                        See The Architecture <i data-lucide="arrow-down" class="w-4 h-4"></i>
                     </a>
                     <a href="https://linkedin.com/in/harshit-choudhary-905aba282" target="_blank" class="px-6 py-3 border border-white/10 rounded-full hover:bg-white/5 transition-colors text-white">
                         LinkedIn
-                    </a>
-                    <a href="https://github.com/harshitcs22s" target="_blank" class="px-6 py-3 border border-white/10 rounded-full hover:bg-white/5 transition-colors text-white">
-                        GitHub
                     </a>
                 </div>
             </div>
@@ -132,93 +127,113 @@
         <section id="experience">
             <div class="flex items-center gap-3 mb-12">
                 <span class="font-mono text-xs text-neutral-600">/01</span>
-                <h2 class="text-3xl font-bold text-white">Experience</h2>
+                <h2 class="text-3xl font-bold text-white">Engineering The Solution</h2>
             </div>
 
-            <div class="relative border-l border-white/10 ml-3 md:ml-6 space-y-16 pb-4">
-                
-                <div class="pl-8 md:pl-12 relative group">
-                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600 group-hover:border-white group-hover:scale-125 transition-all"></div>
-                    
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-white">Founding Engineer & Product Architect</h3>
-                            <div class="flex items-center gap-3 mt-1">
-                                <span class="text-lg text-emerald-400">HindTrade AI</span>
-                                <span class="text-[10px] uppercase tracking-wider font-bold bg-white/10 px-2 py-0.5 rounded text-neutral-300">Current</span>
-                            </div>
-                        </div>
+            <div class="glass-card rounded-2xl p-8 md:p-10 border-l-4 border-l-emerald-500">
+                <div class="flex flex-col md:flex-row justify-between mb-8">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white">Founding Engineer</h3>
+                        <p class="text-emerald-400 text-lg mt-1">HindTrade AI</p>
+                    </div>
+                    <div class="text-right mt-2 md:mt-0">
                         <span class="font-mono text-sm text-neutral-500">2025 - Present</span>
                     </div>
-                    
-                    <p class="text-neutral-300 mb-6 text-lg leading-relaxed font-light">
-                        Leading the architectural design of a <strong>Global Trade OS</strong>. Identifying manual loopholes in trade and replacing them with autonomous AI agents to save costs.
-                    </p>
-                    
-                    <ul class="space-y-4 mb-6">
-                        
-                        <li class="flex items-start gap-3 text-neutral-400 text-sm">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500 mt-0.5 min-w-[16px]"></i>
-                            <span>
-                                <strong class="text-white">CA Onboarding & UDIN Verification:</strong> 
-                                Built an automated verification layer. The system instantly verifies CAs via <strong>UDIN scraping</strong>, cutting manual background check time from 3 days to 30 seconds and eliminating fraud risk.
-                            </span>
-                        </li>
-
-                        <li class="flex items-start gap-3 text-neutral-400 text-sm">
-                            <i data-lucide="truck" class="w-4 h-4 text-emerald-500 mt-0.5 min-w-[16px]"></i>
-                            <span>
-                                <strong class="text-white">Logistics Agent (Cost Arbitrage):</strong> 
-                                Engineered an agent that aggregates rates from multiple carriers in real-time. This creates price transparency, effectively <strong>removing middleman markups</strong> and saving exporters significant logistics costs.
-                            </span>
-                        </li>
-
-                        <li class="flex items-start gap-3 text-neutral-400 text-sm">
-                            <i data-lucide="users" class="w-4 h-4 text-emerald-500 mt-0.5 min-w-[16px]"></i>
-                            <span>
-                                <strong class="text-white">CHA Officer Lead Engine:</strong> 
-                                Developed a "Lead Marketplace" for Customs House Agents (CHAs). Replaced fragmented phone-call networks with a digital dashboard, streamlining officer allocation and speeding up clearance.
-                            </span>
-                        </li>
-                    </ul>
                 </div>
 
-                <div class="pl-8 md:pl-12 relative group">
-                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600 group-hover:border-white group-hover:scale-125 transition-all"></div>
+                <p class="text-neutral-300 text-lg mb-10 leading-relaxed max-w-3xl">
+                    Architecting the operating system for global trade. Below are the specific <strong>manual loopholes</strong> I identified and the <strong>AI agents</strong> I built to solve them.
+                </p>
+
+                <div class="mb-12 relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="file-check" class="w-5 h-5 text-emerald-500"></i>
+                        The CA & Finance Agent (15CB/Networth)
+                    </h4>
                     
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Founder & Operator</h3>
-                            <div class="flex items-center gap-3 mt-1">
-                                <span class="text-lg text-neutral-400">Himrock Exports</span>
-                            </div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-4">
+                        <div class="bg-white/5 p-4 rounded-lg">
+                            <span class="text-xs font-mono text-red-400 uppercase tracking-widest">The Loophole (Problem)</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                Emergency certifications took <strong>3-4 days</strong>. Manual coordination required users to send data, wait for CA drafting, printing, signing, and scanning. High risk of delay and fraud.
+                            </p>
                         </div>
-                        <span class="font-mono text-sm text-neutral-500">2023 - 2024</span>
-                    </div>
-                    
-                    <p class="text-neutral-300 mb-4 text-sm leading-relaxed font-light">
-                        Built and operated a physical export business. Gained the <strong>"Zero-to-One"</strong> domain expertise required to spot the exact inefficiencies I now solve with code.
-                    </p>
-                </div>
-
-                <div class="pl-8 md:pl-12 relative group opacity-70 hover:opacity-100 transition-opacity">
-                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600 group-hover:border-white"></div>
-                    
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Product Experience & Design</h3>
-                            <div class="flex items-center gap-3 mt-1">
-                                <span class="text-base text-neutral-400">Freelance / Contract</span>
-                            </div>
+                        <div class="bg-white/5 p-4 rounded-lg">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Agent Auto-fills User Data <span class="arrow-flow">→</span> Sends to CA Dashboard <span class="arrow-flow">→</span> CA Digitally Signs <span class="arrow-flow">→</span> <strong>Agent verifies UDIN via API</strong> <span class="arrow-flow">→</span> Generates QR Code <span class="arrow-flow">→</span> Secure Doc Delivered.
+                            </p>
+                            <p class="text-xs text-white/50 mt-2">Impact: Time reduced from 4 days to 10 mins.</p>
                         </div>
-                        <span class="font-mono text-sm text-neutral-500">2023 - 2024</span>
                     </div>
-                    
-                    <p class="text-neutral-400 mb-4 text-sm leading-relaxed">
-                        Executed high-fidelity prototyping and user flow optimization. Translated complex requirements into accessible, pixel-perfect interfaces.
-                    </p>
                 </div>
 
+                <div class="mb-12 relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="scan-line" class="w-5 h-5 text-emerald-500"></i>
+                        Logistics & Sample Protection Agent
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-4">
+                        <div class="bg-white/5 p-4 rounded-lg">
+                            <span class="text-xs font-mono text-red-400 uppercase tracking-widest">The Loophole (Problem)</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                Expensive samples sent to buyers often get "lost" or opened without accountability, causing direct financial loss (Sample Wastage).
+                            </p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-lg">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Generate Unique QR <span class="arrow-flow">→</span> Stick on Sample <span class="arrow-flow">→</span> <strong>Live Tracking Starts</strong> <span class="arrow-flow">→</span> Receiver Scans QR <span class="arrow-flow">→</span> Trigger "Sample Opened" Alert to Exporter.
+                            </p>
+                            <p class="text-xs text-white/50 mt-2">Impact: 100% Accountability & Money Saved.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="scale" class="w-5 h-5 text-emerald-500"></i>
+                        The Global Lawyer (HS Codes & Duties)
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-4">
+                        <div class="bg-white/5 p-4 rounded-lg">
+                            <span class="text-xs font-mono text-red-400 uppercase tracking-widest">The Loophole (Problem)</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                180+ countries have changing duties and tariffs. Static databases fail. Manual research is slow and error-prone.
+                            </p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-lg">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Query <strong>Vector Database</strong> <span class="arrow-flow">→</span> If null, perform <strong>Google Search</strong> <span class="arrow-flow">→</span> <strong>Perplexity Web Search</strong> for latest laws <span class="arrow-flow">→</span> Agents Discuss/Verify <span class="arrow-flow">→</span> Auto-Generate Legal Doc.
+                            </p>
+                            <p class="text-xs text-white/50 mt-2">Impact: Zero-error global compliance.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 pl-4 border-l border-white/10 ml-4 space-y-12">
+                <div class="relative group">
+                    <div class="absolute -left-[21px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600"></div>
+                    <h3 class="text-xl font-bold text-white">Founder & Operator <span class="text-neutral-500 font-normal text-sm ml-2">Himrock Exports</span></h3>
+                    <p class="text-neutral-400 mt-2 max-w-2xl text-sm">
+                        Built and ran an export business. This 0-1 experience taught me exactly where the money leaks in logistics, which I now solve with code at HindTrade.
+                    </p>
+                </div>
+                 <div class="relative group">
+                    <div class="absolute -left-[21px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600"></div>
+                    <h3 class="text-xl font-bold text-white">Product Experience & Design <span class="text-neutral-500 font-normal text-sm ml-2">Freelance</span></h3>
+                    <p class="text-neutral-400 mt-2 max-w-2xl text-sm">
+                        Designed high-fidelity user flows. Focused on translating complex backend logic into simple, accessible interfaces.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -229,7 +244,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full group relative">
+                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full group">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="globe" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
@@ -239,50 +254,50 @@
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Global Trade OS</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-                            A unified intelligent workflow for exporters. Includes the CA Onboarding module and Logistics Aggregator.
+                            The core platform hosting the CA and Logistics agents. Built for scale using Next.js.
                         </p>
                     </div>
                     <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] font-bold border border-white/10 px-2 py-1 rounded text-neutral-400">Next.js</span>
-                        <span class="text-[10px] font-bold border border-white/10 px-2 py-1 rounded text-neutral-400">AI Agents</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Next.js</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">AI Agents</span>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full group relative">
+                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full group">
                     <div>
                         <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="shield-check" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
+                            <i data-lucide="database" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
                             <a href="https://github.com/harshitcs22s" target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-white hover:text-black transition-all">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                             </a>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Verification Engine</h3>
+                        <h3 class="text-xl font-bold mb-3 text-white">Vector Compliance DB</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-                            Automated background checks using UDIN scraping and government registry APIs.
+                            Stores duties for 180+ countries. Uses RAG (Retrieval Augmented Generation) for accuracy.
                         </p>
                     </div>
                     <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] font-bold border border-white/10 px-2 py-1 rounded text-neutral-400">Automation</span>
-                        <span class="text-[10px] font-bold border border-white/10 px-2 py-1 rounded text-neutral-400">Security</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Vector DB</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Python</span>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full group relative">
+                <div class="glass-card rounded-xl p-6 flex flex-col justify-between h-full group">
                     <div>
                         <div class="flex justify-between items-start mb-6">
-                            <i data-lucide="truck" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
+                            <i data-lucide="scan-line" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
                             <a href="https://github.com/harshitcs22s" target="_blank" class="p-2 bg-white/5 rounded-full hover:bg-white hover:text-black transition-all">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                             </a>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-white">Logistics Pipeline</h3>
+                        <h3 class="text-xl font-bold mb-3 text-white">QR Event Tracker</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
-                            Event-driven architecture for tracking shipments and calculating optimal routes to save cost.
+                            The sample wastage solution. Generates QR codes that trigger webhooks upon scanning.
                         </p>
                     </div>
                     <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] font-bold border border-white/10 px-2 py-1 rounded text-neutral-400">Event-Driven</span>
-                        <span class="text-[10px] font-bold border border-white/10 px-2 py-1 rounded text-neutral-400">Python</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Webhooks</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Tracking</span>
                     </div>
                 </div>
             </div>
@@ -300,11 +315,10 @@
                         <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">How Our Brain Is Controlling Us</h3>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
                     </div>
-                    <p class="text-sm text-neutral-500 mt-2">Dec 19, 2024 • Neuroscience & Willpower</p>
+                    <p class="text-sm text-neutral-500 mt-2">Dec 19, 2024</p>
 
                     <div id="entry1" class="journal-content text-neutral-400 leading-relaxed font-light">
                         <p class="mb-4">We like to believe we are the pilots of our own lives. But the neuroscience suggests otherwise. We are merely passengers driven by a silent autopilot: the subconscious mind.</p>
-                        <p class="mb-4">College life is a battleground designed to exploit the brain’s reward circuitry. When you reach for your phone the moment you wake up, that isn't <em>you</em> deciding. It’s a dopamine loop.</p>
                         <p class="italic text-white">"We build systems to scale code and trade. It is time we build systems to scale our own minds."</p>
                     </div>
                 </div>
@@ -314,11 +328,10 @@
                         <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">The NIT/IIT "Filter" Effect</h3>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
                     </div>
-                    <p class="text-sm text-neutral-500 mt-2">Jan 10, 2025 • Environment & Growth</p>
+                    <p class="text-sm text-neutral-500 mt-2">Jan 10, 2025</p>
 
                     <div id="entry2" class="journal-content text-neutral-400 leading-relaxed font-light">
-                        <p class="mb-4">The syllabus is available online. The books are the same. So, what actually creates the gap?</p>
-                        <p>It's the peer group. When you live with people from diverse cultures who are all competitively driven, your worldview expands. You don't work hard to stand out; you work hard just to fit in. That is the filter.</p>
+                        <p>It's not about the books; it's about the peer group. The "filter" of excellence forces you to level up just to survive. That is the real value of these institutes.</p>
                     </div>
                 </div>
             </div>
@@ -331,12 +344,15 @@
                     <a href="mailto:harshitsinghnitj@gmail.com" class="text-neutral-400 hover:text-white transition-colors block font-mono">
                         harshitsinghnitj@gmail.com
                     </a>
-                    <p class="text-neutral-400 font-mono text-sm">+91 6283849492</p>
+                    <p class="text-neutral-400 font-mono text-sm tracking-wide">+91 6283849492</p>
                 </div>
                 <div class="flex gap-4">
                     <a href="https://github.com/harshitcs22s" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
                     <a href="https://www.linkedin.com/in/harshit-choudhary-905aba282" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                    <a href="https://instagram.com/baba_aps" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://instagram.com/baba_aps" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all flex items-center gap-2">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <span class="text-xs font-bold">@baba_aps</span>
+                    </a>
                 </div>
             </div>
             <div class="mt-12 text-[10px] text-neutral-600 font-mono uppercase tracking-widest text-center md:text-left">
