@@ -26,9 +26,11 @@
                         emerald: "#10b981", 
                         danger: "#ef4444",
                         gold: "#eab308",
+                        indigo: "#6366f1",
                     },
                     animation: {
                         'blob': 'blob 7s infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         blob: {
@@ -36,6 +38,10 @@
                             '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
                             '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
                             '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 10px rgba(99, 102, 241, 0.5)' },
+                            '50%': { opacity: .5, boxShadow: '0 0 20px rgba(99, 102, 241, 0)' },
                         }
                     }
                 }
@@ -104,6 +110,7 @@
             <div class="hidden md:flex gap-8 text-sm text-neutral-400 font-medium">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#architecture" class="hover:text-white transition-colors">Architecture</a>
+                <a href="#agents" class="hover:text-white transition-colors text-indigo-400">Live Agents</a>
                 <a href="#projects" class="hover:text-white transition-colors">Work</a>
                 <a href="#journal" class="hover:text-white transition-colors">Journal</a>
             </div>
@@ -337,9 +344,96 @@
             </div>
         </section>
 
-        <section id="projects">
+        <section id="agents">
             <div class="flex items-center gap-3 mb-12">
                 <span class="font-mono text-xs text-neutral-600">/02</span>
+                <h2 class="text-3xl font-bold text-white">Live Agent Architectures</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="glass-card rounded-2xl p-8 relative overflow-hidden group hover:border-indigo-500/50">
+                    <div class="absolute -right-4 -top-4 bg-indigo-500/10 w-32 h-32 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
+                    
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 bg-indigo-500/10 rounded-lg border border-indigo-500/20 text-indigo-400">
+                                <i data-lucide="wallet" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">The Fintech Fix</h3>
+                                <p class="text-xs text-neutral-500 font-mono uppercase tracking-wider">Codename: Clerkie</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="relative flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                            <span class="text-[10px] font-bold text-green-500 tracking-widest uppercase">Live</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-white/5 p-4 rounded-lg border-l-2 border-danger/50">
+                            <p class="text-xs text-danger font-bold uppercase mb-1">The Loophole</p>
+                            <p class="text-sm text-neutral-400">Finance apps are passive dashboards; users still overspend because no one stops them.</p>
+                        </div>
+                        <div class="bg-indigo-500/5 p-4 rounded-lg border-l-2 border-indigo-500">
+                            <p class="text-xs text-indigo-400 font-bold uppercase mb-1">My Solution</p>
+                            <p class="text-sm text-neutral-300">"Clerkie Guard"—an active agent that "ring-fences" bill money and hunts unused subscriptions via API.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://app.relevanceai.com/agents/d7b62b/18dd64bb-7e6f-4d82-913c-42ffa5f552c1/bed9912c-d474-4fdc-a2ab-e7264e74477d/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd/chat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false&conversationId=new" target="_blank" class="w-full block text-center py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]">
+                        Initialize Clerkie Guard <i data-lucide="external-link" class="w-4 h-4 inline ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="glass-card rounded-2xl p-8 relative overflow-hidden group hover:border-emerald-500/50">
+                    <div class="absolute -right-4 -top-4 bg-emerald-500/10 w-32 h-32 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20 text-emerald-400">
+                                <i data-lucide="calendar-clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">SaaS Automation</h3>
+                                <p class="text-xs text-neutral-500 font-mono uppercase tracking-wider">Housecall Pro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="relative flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                            <span class="text-[10px] font-bold text-green-500 tracking-widest uppercase">Live</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-white/5 p-4 rounded-lg border-l-2 border-danger/50">
+                            <p class="text-xs text-danger font-bold uppercase mb-1">The Loophole</p>
+                            <p class="text-sm text-neutral-400">Field pros waste hours on next-day prep, manually organizing routes and charts.</p>
+                        </div>
+                        <div class="bg-emerald-500/5 p-4 rounded-lg border-l-2 border-emerald-500">
+                            <p class="text-xs text-emerald-400 font-bold uppercase mb-1">My Solution</p>
+                            <p class="text-sm text-neutral-300">An agent that auto-schedules tasks and routes charts instantly, saving 10+ hours/week.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://app.relevanceai.com/agents/d7b62b/18dd64bb-7e6f-4d82-913c-42ffa5f552c1/bed9912c-d474-4fdc-a2ab-e7264e74477d/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" target="_blank" class="w-full block text-center py-3 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-500 transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)]">
+                        Deploy Field Agent <i data-lucide="external-link" class="w-4 h-4 inline ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="flex items-center gap-3 mb-12">
+                <span class="font-mono text-xs text-neutral-600">/03</span>
                 <h2 class="text-3xl font-bold text-white">Selected Works</h2>
             </div>
 
@@ -405,7 +499,7 @@
 
         <section id="journal" class="max-w-4xl mx-auto">
             <div class="flex items-center gap-3 mb-12">
-                <span class="font-mono text-xs text-neutral-600">/03</span>
+                <span class="font-mono text-xs text-neutral-600">/04</span>
                 <h2 class="text-3xl font-bold text-white">The Journal</h2>
             </div>
 
@@ -472,7 +566,7 @@
                 </div>
             </div>
             <div class="mt-12 text-[10px] text-neutral-600 font-mono uppercase tracking-widest text-center md:text-left">
-                © 2025 Harshit Choudhary
+                © 2024 Harshit Choudhary
             </div>
         </footer>
 
