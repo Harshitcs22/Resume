@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">. 
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,22 @@
                         gold: "#eab308",
                         indigo: "#6366f1",
                         purple: "#a855f7",
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 10px rgba(99, 102, 241, 0.5)' },
+                            '50%': { opacity: .5, boxShadow: '0 0 20px rgba(99, 102, 241, 0)' },
+                        }
                     }
                 }
             }
@@ -215,13 +231,13 @@
                     <div class="grid md:grid-cols-2 gap-8 mb-8 relative z-10">
                         <div class="space-y-2">
                             <p class="text-xs text-neutral-500 font-bold uppercase tracking-wider">The Challenge</p>
-                            <p class="text-neutral-300 font-light leading-relaxed">
+                            <p class="text-white font-light leading-relaxed opacity-90">
                                 International trade law is a minefield. Retainers cost fortunes, and human error in compliance leads to seized shipments. The industry is slow, expensive, and reactive.
                             </p>
                         </div>
                         <div class="space-y-2">
                             <p class="text-xs text-purple-400 font-bold uppercase tracking-wider">The Architecture</p>
-                            <p class="text-neutral-300 font-light leading-relaxed">
+                            <p class="text-white font-light leading-relaxed opacity-90">
                                 A specialized <strong>Legal LLM</strong> utilizing RAG. It instantly calculates customs duties, identifies accurate **HS Codes**, and generates required **Import/Export documentation** for 180+ countries.
                             </p>
                         </div>
@@ -387,12 +403,130 @@
                             <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
                             <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
                                 User Registers <span class="arrow-flow">→</span> <strong>Gatekeeper Agent</strong> scans Govt DBs <span class="arrow-flow">→</span> Assigns <strong>Risk Score (0-100)</strong>.
+                                <br><br>
+                                <span class="text-white font-bold">The "Mini-LinkedIn" Effect:</span> Verified companies get a public profile showcasing <strong>Repo, Past Shipments, Awards, & Connections</strong>.
                             </p>
                         </div>
                     </div>
                 </div>
 
+                <div class="mb-14 relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="bot" class="w-5 h-5 text-emerald-500"></i>
+                        The Sales & Networking Agent
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Dead Leads & Missed News.</strong> Finding buyers takes weeks of cold calls. Critical trade news (duty changes) is often missed until it's too late.
+                            </p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                <strong>Auto-Connect:</strong> Agent scrapes demands <span class="arrow-flow">→</span> Matches with user's product <span class="arrow-flow">→</span> Sends automated connection request.
+                                <br><br>
+                                <strong>News Engine:</strong> Daily aggregation of trade news relevant <em>only</em> to the user's sector.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="mb-14 relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="file-check" class="w-5 h-5 text-emerald-500"></i>
+                        The CA & Finance Agent (UDIN)
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>The 3-Day Lag.</strong> Manual coordination for Networth/15CB certificates. Users send data, wait for drafting, signing, and scanning. High risk of forgery.
+                            </p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                                <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                    Agent Pre-fills Data <span class="arrow-flow">→</span> CA Digitally Signs <span class="arrow-flow">→</span> <strong>Agent verifies UDIN via API</strong>.
+                                </p>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-white/10 flex flex-col gap-2">
+                                <div class="flex justify-between items-center text-xs font-mono text-neutral-500">
+                                    <span>Legacy: <span class="line-through decoration-danger">₹3,000</span> (4 Days)</span>
+                                    <span class="text-danger">High Cost</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm font-bold font-mono text-emerald-400">
+                                    <span>AI Cost: ₹1,500 (10 Mins)</span>
+                                    <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 text-[10px]">50% SAVED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-14 relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="truck" class="w-5 h-5 text-emerald-500"></i>
+                        Logistics & Sample Protection Agent
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Sample Theft & Wastage.</strong> Expensive samples sent to buyers often get "lost" or opened without accountability. No live tracking of <em>opening</em> events.
+                            </p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Unique QR Generation <span class="arrow-flow">→</span> Stick on Sample <span class="arrow-flow">→</span> Receiver Scans QR <span class="arrow-flow">→</span> <strong>Instant "Sample Opened" Webhook</strong> sent to Exporter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-6 border-l border-white/10">
+                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="scale" class="w-5 h-5 text-emerald-500"></i>
+                        The Global Lawyer (HS Codes)
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mt-5">
+                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
+                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
+                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
+                                <strong>Information Asymmetry.</strong> 180+ countries. 1000s of changing HS codes. Static databases fail. Manual Google search is inefficient.
+                            </p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
+                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
+                                Query <strong>Vector DB</strong> <span class="arrow-flow">→</span> If null, perform <strong>Google Search</strong> <span class="arrow-flow">→</span> <strong>Perplexity Web Search</strong> for latest laws <span class="arrow-flow">→</span> Auto-generate compliant doc.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 pl-4 border-l border-white/10 ml-4 space-y-12">
+                <div class="relative group">
+                    <div class="absolute -left-[21px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600"></div>
+                    <h3 class="text-xl font-bold text-white">Ex-Founder & Operator <span class="text-neutral-500 font-normal text-sm ml-2">Himrock Exports</span></h3>
+                    <p class="text-neutral-400 mt-2 max-w-2xl text-sm">
+                        Built and ran an export business from 0 to 1. This operational experience gave me the "Founder's Eye" to spot the exact inefficiencies I now solve with code.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
@@ -413,6 +547,10 @@
                             The core platform hosting the CA and Logistics agents. Built for scale using Next.js.
                         </p>
                     </div>
+                    <div class="pt-6 border-t border-white/5 flex gap-2">
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Next.js</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">AI Agents</span>
+                    </div>
                 </a>
                 
                 <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
@@ -426,6 +564,10 @@
                             Stores duties for 180+ countries. Uses RAG (Retrieval Augmented Generation) for accuracy.
                         </p>
                     </div>
+                    <div class="pt-6 border-t border-white/5 flex gap-2">
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Vector DB</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Python</span>
+                    </div>
                 </a>
 
                 <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
@@ -438,6 +580,10 @@
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
                             The sample wastage solution. Generates QR codes that trigger webhooks upon scanning.
                         </p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 flex gap-2">
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Webhooks</span>
+                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Tracking</span>
                     </div>
                 </a>
             </div>
@@ -613,3 +759,4 @@
     </script>
 </body>
 </html>
+
