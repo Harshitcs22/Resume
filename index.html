@@ -31,10 +31,8 @@
                     },
                     animation: {
                         'blob': 'blob 7s infinite',
-                        'spin-slow': 'spin 15s linear infinite',
-                        'orbit-1': 'spin 20s linear infinite',
-                        'orbit-2': 'spin 30s linear infinite reverse',
-                        'orbit-3': 'spin 40s linear infinite',
+                        'spin-slow': 'spin 60s linear infinite',
+                        'spin-reverse-slow': 'spin 50s linear infinite reverse',
                         'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
@@ -78,49 +76,38 @@
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
         }
 
-        /* Solar System Orbit Animation (Zero Lag CSS) */
-        .orbit-system {
+        /* GALAXY DOTS ANIMATION (Lag Free) */
+        .galaxy-container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
+            width: 1000px;
+            height: 1000px;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.4;
-        }
-        
-        .orbit-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-        }
-        
-        .planet-dot {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            transform: translate(-50%, -50%);
-        }
-        
-        .planet-dot::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+            opacity: 0.15;
         }
 
-        /* 3D Holographic AI Core (Performance Optimized) */
+        .galaxy-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 2px dotted rgba(255, 255, 255, 0.8);
+        }
+
+        .ring-1 { width: 400px; height: 400px; animation: spin 40s linear infinite; border-width: 2px; opacity: 0.5; }
+        .ring-2 { width: 600px; height: 600px; animation: spin 60s linear infinite reverse; border-width: 3px; opacity: 0.3; }
+        .ring-3 { width: 900px; height: 900px; animation: spin 100s linear infinite; border-width: 1px; opacity: 0.2; }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* 3D Holographic AI Core */
         .holo-container {
             position: relative;
             width: 120px;
@@ -138,9 +125,9 @@
             border-bottom-color: #6366f1;
             box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
         }
-        .holo-ring:nth-child(1) { transform: rotateX(60deg) rotateY(0deg); animation: spin 8s linear infinite; }
-        .holo-ring:nth-child(2) { transform: rotateX(60deg) rotateY(60deg); animation: spin 8s linear infinite reverse; }
-        .holo-ring:nth-child(3) { transform: rotateX(60deg) rotateY(-60deg); animation: spin 12s linear infinite; }
+        .holo-ring:nth-child(1) { transform: rotateX(60deg) rotateY(0deg); animation: holoSpin 8s linear infinite; }
+        .holo-ring:nth-child(2) { transform: rotateX(60deg) rotateY(60deg); animation: holoSpin 8s linear infinite reverse; }
+        .holo-ring:nth-child(3) { transform: rotateX(60deg) rotateY(-60deg); animation: holoSpin 12s linear infinite; }
         .holo-core {
             position: absolute;
             top: 50%;
@@ -154,7 +141,7 @@
             animation: pulse-glow 2s infinite alternate;
         }
 
-        @keyframes spin {
+        @keyframes holoSpin {
             0% { transform: rotateX(60deg) rotateZ(0deg); }
             100% { transform: rotateX(60deg) rotateZ(360deg); }
         }
@@ -187,27 +174,19 @@
                     Hire Me
                 </a>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <main class="max-w-6xl mx-auto px-6 pt-24 pb-24 space-y-32">
         
         <section id="about" class="min-h-[85vh] flex flex-col justify-center items-center relative overflow-hidden text-center">
             
-            <div class="orbit-system">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] bg-emerald-500/10 blur-3xl rounded-full"></div>
-                
-                <div class="orbit-ring w-[300px] h-[300px]"></div>
-                <div class="planet-dot w-[300px] h-[300px] animate-orbit-1"></div>
-                
-                <div class="orbit-ring w-[500px] h-[500px] opacity-70"></div>
-                <div class="planet-dot w-[500px] h-[500px] animate-orbit-2" style="animation-duration: 25s;"></div>
-                
-                <div class="orbit-ring w-[700px] h-[700px] opacity-40"></div>
-                <div class="planet-dot w-[700px] h-[700px] animate-orbit-3"></div>
+            <div class="galaxy-container">
+                <div class="galaxy-ring ring-1"></div>
+                <div class="galaxy-ring ring-2"></div>
+                <div class="galaxy-ring ring-3"></div>
             </div>
 
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/20 rounded-full blur-[120px] mix-blend-screen animate-blob pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/10 rounded-full blur-[120px] mix-blend-screen animate-blob pointer-events-none"></div>
 
             <div class="relative z-10 flex flex-col items-center">
                 <h2 class="text-sm md:text-base font-semibold tracking-[0.25em] text-emerald-400 uppercase mb-4">
@@ -249,12 +228,11 @@
             <div class="space-y-8">
                 
                 <div class="glass-card rounded-2xl p-8 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="absolute -right-10 -top-10 bg-purple-500/20 w-64 h-64 rounded-full blur-3xl group-hover:bg-purple-500/30 transition-all"></div>
+                    <div class="absolute -right-10 -top-10 bg-purple-500/10 w-64 h-64 rounded-full blur-3xl pointer-events-none"></div>
                     
                     <div class="flex flex-col md:flex-row justify-between items-start mb-8 relative z-10 gap-4">
                         <div class="flex items-center gap-4">
-                            <div class="p-4 bg-purple-500/10 rounded-xl border border-purple-500/30 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                            <div class="p-4 bg-purple-500/10 rounded-xl border border-purple-500/30 text-purple-400">
                                 <i data-lucide="scale" class="w-8 h-8"></i>
                             </div>
                             <div>
@@ -331,7 +309,7 @@
                             </div>
                         </div>
 
-                        <a href="https://app.relevanceai.com/agents/d7b62b/3fdb8425-c0a5-4909-9513-21d07c9f8f99/7b7c06ee-c03b-4770-bb0c-00fb4f5732d5/edit/instructions" target="_blank" class="w-full block text-center py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]">
+                        <a href="https://app.relevanceai.com/agents/d7b62b/3fdb8425-c0a5-4909-9513-21d07c9f8f99/7b7c06ee-c03b-4770-bb0c-00fb4f5732d5/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" target="_blank" class="w-full block text-center py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)] hover:shadow-[0_0_25px_rgba(99,102,241,0.5)]">
                             Initialize Clerkie Guard <i data-lucide="external-link" class="w-4 h-4 inline ml-2"></i>
                         </a>
                     </div>
