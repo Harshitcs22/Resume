@@ -28,24 +28,6 @@
                         gold: "#eab308",
                         indigo: "#6366f1",
                         purple: "#a855f7",
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'spin-slow': 'spin 60s linear infinite',
-                        'spin-reverse-slow': 'spin 50s linear infinite reverse',
-                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: 1, boxShadow: '0 0 10px rgba(99, 102, 241, 0.5)' },
-                            '50%': { opacity: .5, boxShadow: '0 0 20px rgba(99, 102, 241, 0)' },
-                        }
                     }
                 }
             }
@@ -58,6 +40,20 @@
             color: #d4d4d4;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gravity Dots Canvas */
+        #gravity-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind everything */
+            pointer-events: none;
+            opacity: 0.6;
         }
 
         /* Luxury Glass Effect */
@@ -76,38 +72,7 @@
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
         }
 
-        /* GALAXY DOTS ANIMATION (Lag Free) */
-        .galaxy-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 1000px;
-            height: 1000px;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.15;
-        }
-
-        .galaxy-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            border: 2px dotted rgba(255, 255, 255, 0.8);
-        }
-
-        .ring-1 { width: 400px; height: 400px; animation: spin 40s linear infinite; border-width: 2px; opacity: 0.5; }
-        .ring-2 { width: 600px; height: 600px; animation: spin 60s linear infinite reverse; border-width: 3px; opacity: 0.3; }
-        .ring-3 { width: 900px; height: 900px; animation: spin 100s linear infinite; border-width: 1px; opacity: 0.2; }
-
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        /* 3D Holographic AI Core */
+        /* 3D Holographic AI Core (Above Agents) */
         .holo-container {
             position: relative;
             width: 120px;
@@ -145,6 +110,10 @@
             0% { transform: rotateX(60deg) rotateZ(0deg); }
             100% { transform: rotateX(60deg) rotateZ(360deg); }
         }
+        @keyframes pulse-glow {
+            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
 
         .arrow-flow { color: #525252; font-size: 0.8rem; margin: 0 6px; }
         .journal-content { max-height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease; }
@@ -153,6 +122,8 @@
     </style>
 </head>
 <body class="selection:bg-white/20">
+
+    <canvas id="gravity-canvas"></canvas>
 
     <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-void/80 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -178,16 +149,8 @@
 
     <main class="max-w-6xl mx-auto px-6 pt-24 pb-24 space-y-32">
         
-        <section id="about" class="min-h-[85vh] flex flex-col justify-center items-center relative overflow-hidden text-center">
+        <section id="about" class="min-h-[85vh] flex flex-col justify-center items-center relative text-center">
             
-            <div class="galaxy-container">
-                <div class="galaxy-ring ring-1"></div>
-                <div class="galaxy-ring ring-2"></div>
-                <div class="galaxy-ring ring-3"></div>
-            </div>
-
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/10 rounded-full blur-[120px] mix-blend-screen animate-blob pointer-events-none"></div>
-
             <div class="relative z-10 flex flex-col items-center">
                 <h2 class="text-sm md:text-base font-semibold tracking-[0.25em] text-emerald-400 uppercase mb-4">
                     AI Product Architect
@@ -424,130 +387,12 @@
                             <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
                             <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
                                 User Registers <span class="arrow-flow">→</span> <strong>Gatekeeper Agent</strong> scans Govt DBs <span class="arrow-flow">→</span> Assigns <strong>Risk Score (0-100)</strong>.
-                                <br><br>
-                                <span class="text-white font-bold">The "Mini-LinkedIn" Effect:</span> Verified companies get a public profile showcasing <strong>Repo, Past Shipments, Awards, & Connections</strong>.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-14 relative pl-6 border-l border-white/10">
-                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                        <i data-lucide="bot" class="w-5 h-5 text-emerald-500"></i>
-                        The Sales & Networking Agent
-                    </h4>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mt-5">
-                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
-                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
-                                <strong>Dead Leads & Missed News.</strong> Finding buyers takes weeks of cold calls. Critical trade news (duty changes) is often missed until it's too late.
-                            </p>
-                        </div>
-                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
-                                <strong>Auto-Connect:</strong> Agent scrapes demands <span class="arrow-flow">→</span> Matches with user's product <span class="arrow-flow">→</span> Sends automated connection request.
-                                <br><br>
-                                <strong>News Engine:</strong> Daily aggregation of trade news relevant <em>only</em> to the user's sector.
-                            </p>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="mb-14 relative pl-6 border-l border-white/10">
-                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                        <i data-lucide="file-check" class="w-5 h-5 text-emerald-500"></i>
-                        The CA & Finance Agent (UDIN)
-                    </h4>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mt-5">
-                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
-                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
-                                <strong>The 3-Day Lag.</strong> Manual coordination for Networth/15CB certificates. Users send data, wait for drafting, signing, and scanning. High risk of forgery.
-                            </p>
-                        </div>
-                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20 flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                                <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
-                                    Agent Pre-fills Data <span class="arrow-flow">→</span> CA Digitally Signs <span class="arrow-flow">→</span> <strong>Agent verifies UDIN via API</strong>.
-                                </p>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10 flex flex-col gap-2">
-                                <div class="flex justify-between items-center text-xs font-mono text-neutral-500">
-                                    <span>Legacy: <span class="line-through decoration-danger">₹3,000</span> (4 Days)</span>
-                                    <span class="text-danger">High Cost</span>
-                                </div>
-                                <div class="flex justify-between items-center text-sm font-bold font-mono text-emerald-400">
-                                    <span>AI Cost: ₹1,500 (10 Mins)</span>
-                                    <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 text-[10px]">50% SAVED</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-14 relative pl-6 border-l border-white/10">
-                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                        <i data-lucide="truck" class="w-5 h-5 text-emerald-500"></i>
-                        Logistics & Sample Protection Agent
-                    </h4>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mt-5">
-                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
-                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
-                                <strong>Sample Theft & Wastage.</strong> Expensive samples sent to buyers often get "lost" or opened without accountability. No live tracking of <em>opening</em> events.
-                            </p>
-                        </div>
-                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
-                                Unique QR Generation <span class="arrow-flow">→</span> Stick on Sample <span class="arrow-flow">→</span> Receiver Scans QR <span class="arrow-flow">→</span> <strong>Instant "Sample Opened" Webhook</strong> sent to Exporter.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative pl-6 border-l border-white/10">
-                    <div class="absolute -left-[5px] top-1 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
-                    <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                        <i data-lucide="scale" class="w-5 h-5 text-emerald-500"></i>
-                        The Global Lawyer (HS Codes)
-                    </h4>
-                    
-                    <div class="grid md:grid-cols-2 gap-8 mt-5">
-                        <div class="bg-white/5 p-5 rounded-lg border border-white/5">
-                            <span class="text-xs font-mono text-danger uppercase tracking-widest flex items-center gap-2"><i data-lucide="x-circle" class="w-3 h-3"></i> The Loophole</span>
-                            <p class="text-sm text-neutral-400 mt-2 leading-relaxed">
-                                <strong>Information Asymmetry.</strong> 180+ countries. 1000s of changing HS codes. Static databases fail. Manual Google search is inefficient.
-                            </p>
-                        </div>
-                        <div class="bg-white/5 p-5 rounded-lg border border-emerald-500/20">
-                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest flex items-center gap-2"><i data-lucide="check-circle" class="w-3 h-3"></i> The AI Solution</span>
-                            <p class="text-sm text-neutral-300 mt-2 font-mono leading-relaxed">
-                                Query <strong>Vector DB</strong> <span class="arrow-flow">→</span> If null, perform <strong>Google Search</strong> <span class="arrow-flow">→</span> <strong>Perplexity Web Search</strong> for latest laws <span class="arrow-flow">→</span> Auto-generate compliant doc.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-16 pl-4 border-l border-white/10 ml-4 space-y-12">
-                <div class="relative group">
-                    <div class="absolute -left-[21px] top-2 w-2.5 h-2.5 rounded-full bg-void border border-neutral-600"></div>
-                    <h3 class="text-xl font-bold text-white">Ex-Founder & Operator <span class="text-neutral-500 font-normal text-sm ml-2">Himrock Exports</span></h3>
-                    <p class="text-neutral-400 mt-2 max-w-2xl text-sm">
-                        Built and ran an export business from 0 to 1. This operational experience gave me the "Founder's Eye" to spot the exact inefficiencies I now solve with code.
-                    </p>
-                </div>
-            </div>
         </section>
 
         <section id="projects">
@@ -555,62 +400,44 @@
                 <span class="font-mono text-xs text-neutral-600">/03</span>
                 <h2 class="text-3xl font-bold text-white">Selected Works</h2>
             </div>
-
+            
             <div class="grid md:grid-cols-3 gap-6">
                 <a href="https://hindtradeai.vercel.app/" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="globe" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
-                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-white group-hover:text-black transition-all">
-                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Global Trade OS</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
                             The core platform hosting the CA and Logistics agents. Built for scale using Next.js.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Next.js</span>
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">AI Agents</span>
-                    </div>
                 </a>
-
+                
                 <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
                     <div>
-                        <div class="flex justify-between items-start mb-6">
+                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="database" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
-                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-white group-hover:text-black transition-all">
-                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">Vector Compliance DB</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
                             Stores duties for 180+ countries. Uses RAG (Retrieval Augmented Generation) for accuracy.
                         </p>
                     </div>
-                    <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Vector DB</span>
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Python</span>
-                    </div>
                 </a>
 
                 <a href="https://github.com/harshitcs22s" target="_blank" class="block glass-card rounded-xl p-6 flex flex-col justify-between h-full group hover:border-emerald-500/50 cursor-pointer">
                     <div>
-                        <div class="flex justify-between items-start mb-6">
+                         <div class="flex justify-between items-start mb-6">
                             <i data-lucide="scan-line" class="w-8 h-8 text-neutral-500 group-hover:text-white transition-colors"></i>
-                            <div class="p-2 bg-white/5 rounded-full group-hover:bg-white group-hover:text-black transition-all">
-                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-white">QR Event Tracker</h3>
                         <p class="text-neutral-400 text-sm leading-relaxed mb-6">
                             The sample wastage solution. Generates QR codes that trigger webhooks upon scanning.
                         </p>
-                    </div>
-                    <div class="pt-6 border-t border-white/5 flex gap-2">
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Webhooks</span>
-                        <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-neutral-400">Tracking</span>
                     </div>
                 </a>
             </div>
@@ -623,6 +450,20 @@
             </div>
 
             <div class="space-y-6">
+                <div class="glass-card rounded-xl p-8 cursor-pointer group" onclick="toggleJournal('entry-ai', this)">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">How to Interact with AI (The 1% Edge)</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
+                    </div>
+                    <p class="text-sm text-neutral-500 mt-2">Dec 21, 2024 • AI Strategy</p>
+
+                    <div id="entry-ai" class="journal-content text-neutral-400 leading-relaxed font-light">
+                        <p class="mb-4">We often speak to AI like we speak to humans, expecting it to understand "implied" context. That is the first mistake. Humans operate on shared cultural assumptions; AI operates on **strict logic**.</p>
+                        <p class="mb-4"><strong>The "Prompt Refiner" Protocol:</strong> Never send a raw thought to your execution bot. Use a separate "Architect Bot" first. Tell it: <em>"Refine this thought into a precise technical prompt."</em> Then, feed that polished output to your coding agent.</p>
+                        <p>This is the 1% edge. It's not about the model you use; it's about the language you speak. You must translate "Human Intent" into "Machine Instructions" with zero ambiguity.</p>
+                    </div>
+                </div>
+
                 <div class="glass-card rounded-xl p-8 cursor-pointer group" onclick="toggleJournal('entry1', this)">
                     <div class="flex justify-between items-start">
                         <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">God, Brain & The Dopamine Loop</h3>
@@ -645,20 +486,7 @@
 
                     <div id="entry2" class="journal-content text-neutral-400 leading-relaxed font-light">
                         <p class="mb-4">People ask what makes NITs/IITs special. It's not the syllabus; the books are the same everywhere. It's the **Filter**.</p>
-                        <p>These students are already the top 1% selected from millions via JEE. You are thrown into a room with people from 29 different states, all competitively driven. You don't work hard to stand out; you work hard just to survive. That environment creates an automatic standard of excellence that stays with you forever.</p>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-8 cursor-pointer group" onclick="toggleJournal('entry3', this)">
-                    <div class="flex justify-between items-start">
-                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">The Cost of Inaction</h3>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-500 transition-transform duration-300 toggle-icon"></i>
-                    </div>
-                    <p class="text-sm text-neutral-500 mt-2">Feb 02, 2025 • Philosophy</p>
-
-                    <div id="entry3" class="journal-content text-neutral-400 leading-relaxed font-light">
-                        <p class="mb-4">In a world of infinite leverage (Code & Media), the cost of trying is zero, but the cost of inaction is infinite.</p>
-                        <p>Most people overestimate the risk of doing something new and underestimate the risk of staying in the same place. Building HindTrade taught me that the "perfect plan" is a myth. You only find the solution by creating the problem first.</p>
+                        <p>These students are already the top 1% selected from millions via JEE. You are thrown into a room with people from 29 different states, all competitively driven. You don't work hard to stand out; you work hard just to survive.</p>
                     </div>
                 </div>
             </div>
@@ -678,9 +506,16 @@
                 <div class="flex gap-4">
                     <a href="https://github.com/harshitcs22s" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
                     <a href="https://www.linkedin.com/in/harshit-choudhary-905aba282" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                    <a href="https://instagram.com/baba_aps" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all flex items-center gap-2">
-                        <i data-lucide="instagram" class="w-5 h-5"></i>
-                        <span class="text-xs font-bold">@baba_aps</span>
+                    
+                    <a href="https://wellfound.com/p/harshit-choudhary-26?public_profile=1" target="_blank" class="p-3 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all flex items-center gap-2 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-400 group-hover:text-black">
+                             <path d="M2 12h10" />
+                             <path d="M9 4v16" />
+                             <path d="M3 9l3 3-3 3" />
+                             <path d="M12 2l3 3 3-3" />
+                             <path d="M16 4l2 16 2-16" />
+                        </svg>
+                        <span class="text-xs font-bold text-neutral-400 group-hover:text-black">Wellfound</span>
                     </a>
                 </div>
             </div>
@@ -706,6 +541,75 @@
                 icon.style.transform = 'rotate(180deg)';
             }
         }
+
+        /* ----------------------------------------------------
+           GRAVITY DOTS ANIMATION (Canvas)
+           - Creates floating white dots covering the whole screen
+           - Simulates the "Antigravity" look
+        ------------------------------------------------------- */
+        const canvas = document.getElementById('gravity-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 0.5; // Small white dots
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Wrap around screen
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.2})`; // Flickering opacity
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.floor(window.innerWidth / 10); // Adjust density
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+
+        resize();
+        initParticles();
+        animate();
     </script>
 </body>
 </html>
