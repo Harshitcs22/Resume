@@ -32,7 +32,9 @@
                     animation: {
                         'blob': 'blob 7s infinite',
                         'spin-slow': 'spin 15s linear infinite',
-                        'reverse-spin': 'spin 15s linear infinite reverse',
+                        'orbit-1': 'spin 20s linear infinite',
+                        'orbit-2': 'spin 30s linear infinite reverse',
+                        'orbit-3': 'spin 40s linear infinite',
                         'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
@@ -74,6 +76,48 @@
             border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-4px) scale(1.005);
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+        }
+
+        /* Solar System Orbit Animation (Zero Lag CSS) */
+        .orbit-system {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+        
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+        
+        .planet-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .planet-dot::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
         }
 
         /* 3D Holographic AI Core (Performance Optimized) */
@@ -150,8 +194,20 @@
         
         <section id="about" class="min-h-[85vh] flex flex-col justify-center items-center relative overflow-hidden text-center">
             
+            <div class="orbit-system">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] bg-emerald-500/10 blur-3xl rounded-full"></div>
+                
+                <div class="orbit-ring w-[300px] h-[300px]"></div>
+                <div class="planet-dot w-[300px] h-[300px] animate-orbit-1"></div>
+                
+                <div class="orbit-ring w-[500px] h-[500px] opacity-70"></div>
+                <div class="planet-dot w-[500px] h-[500px] animate-orbit-2" style="animation-duration: 25s;"></div>
+                
+                <div class="orbit-ring w-[700px] h-[700px] opacity-40"></div>
+                <div class="planet-dot w-[700px] h-[700px] animate-orbit-3"></div>
+            </div>
+
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-900/20 rounded-full blur-[120px] mix-blend-screen animate-blob pointer-events-none"></div>
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[100px] mix-blend-screen animate-blob animation-delay-2000 pointer-events-none"></div>
 
             <div class="relative z-10 flex flex-col items-center">
                 <h2 class="text-sm md:text-base font-semibold tracking-[0.25em] text-emerald-400 uppercase mb-4">
@@ -192,7 +248,7 @@
 
             <div class="space-y-8">
                 
-                <div class="glass-card rounded-2xl p-8 relative overflow-hidden group hover:border-purple-500/50 transform hover:scale-[1.01] transition-all duration-500">
+                <div class="glass-card rounded-2xl p-8 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500">
                     <div class="absolute inset-0 bg-gradient-to-r from-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="absolute -right-10 -top-10 bg-purple-500/20 w-64 h-64 rounded-full blur-3xl group-hover:bg-purple-500/30 transition-all"></div>
                     
@@ -225,15 +281,20 @@
                         <div class="space-y-2">
                             <p class="text-xs text-purple-400 font-bold uppercase tracking-wider">The Architecture</p>
                             <p class="text-neutral-300 font-light leading-relaxed">
-                                A specialized <strong>Legal LLM</strong> that doesn't just search—it <em>interprets</em>. It navigates 180+ jurisdictions instantly, drafts ironclad contracts, and ring-fences your business from liability with surgical precision.
+                                A specialized <strong>Legal LLM</strong> utilizing RAG. It instantly calculates customs duties, identifies accurate **HS Codes**, and generates required **Import/Export documentation** for 180+ countries.
                             </p>
                         </div>
                     </div>
 
-                    <a href="https://app.relevanceai.com/agents/d7b62b/18dd64bb-7e6f-4d82-913c-42ffa5f552c1/1733a3cb-bd12-45c6-9cbc-71e1286652fe/edit/instructions" target="_blank" class="relative z-10 w-full flex items-center justify-center gap-3 py-4 rounded-xl bg-gradient-to-r from-purple-700 to-purple-900 text-white font-semibold hover:from-purple-600 hover:to-purple-800 transition-all shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]">
-                        <span>Consult The Legal Sentinel</span>
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
+                    <div class="relative z-10 w-full h-[600px] rounded-xl overflow-hidden border border-white/10 bg-black shadow-2xl">
+                        <iframe 
+                            src="https://app.relevanceai.com/agents/d7b62b/18dd64bb-7e6f-4d82-913c-42ffa5f552c1/1733a3cb-bd12-45c6-9cbc-71e1286652fe/embed-chat?starting_message_prompts=You+have+one+free+query.+Ask+your+import-export+legal+or+HS+code+question+clearly.+For+further+assistance%2C+registration+will+be+required.&hide_tool_steps=true&hide_file_uploads=true&hide_conversation_list=true&bubble_style=agent&primary_color=%23000000&bubble_icon=pd%2Fchat&input_placeholder_text=You+have+1+free+query.+Ask+now%E2%80%A6&hide_logo=false&hide_description=false" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            allow="microphone">
+                        </iframe>
+                    </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
